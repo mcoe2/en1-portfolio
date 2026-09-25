@@ -25,7 +25,7 @@
     --color-bg-overlay: rgba(74, 122, 110, 0.5); /* translucent header/hero overlay */
 
     /* Typography */
-    --font-body: Arial, Helvetica, sans-serif;
+    --font-body: "Trebuchet MS", "Segoe UI", sans-serif;
 
     /* Shape */
     --radius: 10px;

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Savanna habitat background">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#77c7d2"/>
+      <stop offset="1" stop-color="#d8edcf"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#94c56a"/>
+      <stop offset="1" stop-color="#3d7650"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="1290" cy="170" r="82" fill="#ffd21f" opacity=".8"/>
+  <path d="M0 245 C190 170 310 205 430 250 C530 288 650 260 740 220 C830 180 960 195 1070 248 C1190 305 1380 270 1600 210 L1600 0 L0 0Z" fill="#6aaab2" opacity=".42"/>
+  <g fill="#f4f2d8" opacity=".8">
+    <path d="M1160 230 C1205 180 1270 190 1290 224 C1350 184 1438 215 1430 270 C1378 292 1210 285 1160 230Z"/>
+    <path d="M220 190 C275 146 330 165 348 202 C395 174 460 198 454 242 C395 260 270 252 220 190Z"/>
+  </g>
+  <path d="M0 555 C220 488 390 520 575 552 C770 588 930 498 1110 510 C1290 522 1450 470 1600 500 L1600 900 L0 900Z" fill="#759f63"/>
+  <path d="M0 620 C170 565 370 594 540 620 C735 650 870 565 1050 580 C1280 598 1420 548 1600 590 L1600 900 L0 900Z" fill="url(#ground)"/>
+  <path d="M-10 570 C-7 442 0 365 11 292" fill="none" stroke="#496b48" stroke-width="20" stroke-linecap="round"/>
+  <g fill="#d3e27b" opacity=".9">
+    <path d="M635 780 C642 714 650 670 666 630 C664 700 671 730 681 780Z"/>
+    <path d="M690 800 C703 724 727 688 754 658 C735 727 738 762 746 803Z"/>
+    <path d="M1090 820 C1100 727 1132 675 1164 640 C1143 730 1144 780 1150 824Z"/>
+    <path d="M1230 840 C1240 766 1270 713 1302 680 C1285 750 1287 794 1295 842Z"/>
+  </g>
+  <g fill="#4f8b50">
+    <circle cx="70" cy="694" r="68"/><circle cx="170" cy="676" r="84"/><circle cx="270" cy="706" r="60"/>
+    <circle cx="1370" cy="700" r="76"/><circle cx="1480" cy="675" r="96"/><circle cx="1580" cy="710" r="70"/>
+  </g>
+  <path d="M0 820 C240 770 420 824 620 810 C840 794 1030 830 1240 806 C1390 789 1500 800 1600 780 L1600 900 L0 900Z" fill="#285442" opacity=".7"/>
+</svg>

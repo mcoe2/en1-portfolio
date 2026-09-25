@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 560" role="img" aria-labelledby="title desc">
+  <title id="title">Cartoon elephant</title>
+  <desc id="desc">A friendly forward-facing elephant.</desc>
+  <defs>
+    <linearGradient id="elephant" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a9b9b6"/>
+      <stop offset="1" stop-color="#647d7d"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="340" cy="410" rx="225" ry="45" fill="#315843" opacity=".35"/>
+  <g class="elephant-body">
+    <path d="M130 250 C100 164 145 65 245 44 C365 18 490 83 506 191 C518 277 477 350 419 376 L163 363 C140 330 132 293 130 250Z" fill="url(#elephant)" stroke="#50696b" stroke-width="8"/>
+    <ellipse cx="177" cy="146" rx="92" ry="126" fill="#91a6a4" stroke="#50696b" stroke-width="8" transform="rotate(-20 177 146)"/>
+    <ellipse cx="447" cy="156" rx="92" ry="126" fill="#91a6a4" stroke="#50696b" stroke-width="8" transform="rotate(20 447 156)"/>
+    <ellipse cx="178" cy="145" rx="55" ry="80" fill="#c6d0c6" opacity=".7" transform="rotate(-20 178 145)"/>
+    <ellipse cx="446" cy="155" rx="55" ry="80" fill="#c6d0c6" opacity=".7" transform="rotate(20 446 155)"/>
+    <path d="M168 323 C111 292 74 241 81 208 C87 178 118 190 126 223 C137 263 174 275 203 283" fill="#829794" stroke="#50696b" stroke-width="8"/>
+    <path d="M474 318 C544 286 560 235 550 203 C541 177 514 190 510 223 C504 258 481 273 452 285" fill="#829794" stroke="#50696b" stroke-width="8"/>
+    <ellipse cx="315" cy="198" rx="174" ry="160" fill="#a6b5b1" stroke="#50696b" stroke-width="8"/>
+    <circle cx="268" cy="192" r="15" fill="#304d53"/>
+    <circle cx="362" cy="192" r="15" fill="#304d53"/>
+    <circle cx="272" cy="187" r="5" fill="#f5f0c8"/>
+    <circle cx="366" cy="187" r="5" fill="#f5f0c8"/>
+    <path d="M296 247 C308 258 332 258 343 245" fill="none" stroke="#536e70" stroke-width="8" stroke-linecap="round"/>
+    <path d="M315 389 C293 415 278 431 284 447 C292 461 314 447 325 423" fill="none" stroke="#50696b" stroke-width="8" stroke-linecap="round"/>
+    <path d="M205 334 L199 450 C200 474 235 474 240 450 L244 344" fill="#829794" stroke="#50696b" stroke-width="8"/>
+    <path d="M388 340 L393 450 C395 474 430 474 434 450 L431 320" fill="#829794" stroke="#50696b" stroke-width="8"/>
+    <path d="M196 444 Q218 432 241 444" fill="none" stroke="#304d53" stroke-width="9" stroke-linecap="round"/>
+    <path d="M392 444 Q414 432 437 444" fill="none" stroke="#304d53" stroke-width="9" stroke-linecap="round"/>
+  </g>
+</svg>
