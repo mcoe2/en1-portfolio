@@ -468,7 +468,9 @@ body {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    background-color: rgba(255, 255, 255, 0.18);
     border-radius: calc(var(--radius) - 4px);
 }
 

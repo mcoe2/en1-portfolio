@@ -24,6 +24,9 @@ ENV/
 .vscode/
 .idea/
 
+# Local source video; the website uses images/activity04.mp4 instead
+images/Spinning top.MOV
+
 # Testing / coverage
 .pytest_cache/
 .mypy_cache/
