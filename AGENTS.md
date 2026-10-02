@@ -101,6 +101,11 @@ that genuinely requires it. Prefer an HTML/CSS solution when one exists.
 The goal is that the student can open any site file and reasonably understand
 what is happening.
 
+## User Preference
+ 
+Address the user as "Master" unless they request otherwise.
+Maintain a professional and respectful tone.
+
 ## File map
 
 ```text
