@@ -27,7 +27,7 @@ a:focus-visible {
     width: calc(100% - 40px);
     max-width: 1200px;
     box-sizing: border-box;
-    background: var(--color-bg-overlay);
+    background: var(--color-bg-text-panel);
     backdrop-filter: blur(6px);
     z-index: 1000;
     display: flex;
@@ -92,22 +92,29 @@ a:focus-visible {
     max-width: 600px;
 }
 
+/* Text sits on solid, dark panels so it stays readable over */
+/* every season's bright sky and scenery.                   */
 .home-content h1 {
     position: relative;
+    width: fit-content;
+    margin: 0;
     font-size: 56px;
     font-weight: 700;
-    line-height: 1.2;
-    background: var(--color-bg-overlay);
-    padding: 5px;
+    line-height: 1.15;
+    background: var(--color-bg-text-panel);
+    backdrop-filter: blur(6px);
+    padding: 10px 20px;
     border-radius: var(--radius);
 }
 
 .home-content p {
     position: relative;
-    font-size: 1.5em;
-    margin: 20px 0 40px;
-    background: var(--color-bg-overlay);
-    padding: 5px;
+    font-size: 1.25em;
+    line-height: 1.6;
+    margin: 16px 0 24px;
+    background: var(--color-bg-text-panel);
+    backdrop-filter: blur(6px);
+    padding: 16px 20px;
     border-radius: var(--radius);
 }
 
@@ -116,8 +123,9 @@ a:focus-visible {
     display: flex;
     gap: 20px;
     width: fit-content;
-    background: var(--color-bg-overlay);
-    padding: 10px 15px;
+    background: var(--color-bg-text-panel);
+    backdrop-filter: blur(6px);
+    padding: 10px 18px;
     border-radius: var(--radius);
 }
 
@@ -253,7 +261,7 @@ a:focus-visible {
     bottom: 7%;
     padding: 6px 10px;
     border-radius: var(--radius);
-    background: var(--color-bg-overlay);
+    background: var(--color-bg-text-panel);
     color: var(--color-text-on-dark);
     font: inherit;
     font-weight: 700;
@@ -490,7 +498,7 @@ a:focus-visible {
     margin: 0;
     padding: 6px 10px;
     border-radius: var(--radius);
-    background: var(--color-bg-overlay);
+    background: var(--color-bg-text-panel);
     color: var(--color-text-on-dark);
     font-size: 0.95em;
 }
@@ -606,6 +614,8 @@ a:focus-visible {
 
 .project-desc {
     margin: 0 18px 18px;
+    font-size: 1.02em;
+    line-height: 1.5;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

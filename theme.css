@@ -23,6 +23,7 @@
     --color-bg-page: #f4f4f4;       /* page background on activity/project pages */
     --color-bg-card: #ffffff;       /* white card/container background */
     --color-bg-overlay: rgba(74, 122, 110, 0.5); /* translucent header/hero overlay */
+    --color-bg-text-panel: rgba(36, 64, 57, 0.86); /* behind white text on the home scene (keeps it readable) */
     --color-bg-header-light: rgba(250, 250, 250, 0.92); /* header bar on activity/project pages */
     --color-bg-accent-soft: rgba(224, 166, 106, 0.14);  /* pale orange callout boxes */
     --color-bg-media: #1f1a17;      /* behind videos while they load */

@@ -63,7 +63,7 @@
                 <span></span><span></span><span></span><span></span><span></span>
             </div>
         </div>
-        <p class="scene-status" id="scene-status" aria-live="polite">Click the sun<span class="tree-hint">, the tree,</span> or the elephant.</p>
+        <p class="scene-status">Click the sun<span class="tree-hint">, the tree,</span> or the elephant.</p>
     </section>
 
     <!-- Portfolio Section -->
@@ -159,7 +159,6 @@
         const elephantControl = document.querySelector('.elephant-control');
         const sunHotspot = document.querySelector('.sun-hotspot');
         const treeHotspot = document.querySelector('.tree-hotspot');
-        const sceneStatus = document.querySelector('#scene-status');
 
         const seasons = ['spring', 'summer', 'autumn', 'winter'];
         let seasonIndex = Math.floor(Math.random() * seasons.length);
@@ -180,7 +179,6 @@
             elephantControl.classList.remove('dancing');
             void elephantControl.offsetWidth;
             elephantControl.classList.add('dancing');
-            sceneStatus.textContent = 'The elephant is dancing!';
         });
 
         sunHotspot.addEventListener('click', () => {
@@ -192,7 +190,6 @@
             home.classList.remove(`season-${seasons[seasonIndex]}`);
             seasonIndex = (seasonIndex + 1) % seasons.length;
             home.classList.add(`season-${seasons[seasonIndex]}`);
-            sceneStatus.textContent = `It is now ${seasons[seasonIndex]}.`;
 
             window.setTimeout(() => {
                 seasonChanging = false;
@@ -203,9 +200,6 @@
             home.classList.remove('breeze');
             void home.offsetWidth;
             home.classList.add('breeze');
-            sceneStatus.textContent = seasons[seasonIndex] === 'winter'
-                ? 'The wind whistles through the bare branches.'
-                : 'A breeze is moving through the tree.';
         });
     </script>
     
