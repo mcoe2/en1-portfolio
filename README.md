@@ -112,7 +112,7 @@ Things to personalize:
 
 Then, as you complete each activity/project, ask your assistant to replace
 its lorem-ipsum text and placeholder image, and give its `<title>` tag a
-real, specific value (see [AGENTS.md](./AGENTS.md)).
+real, specific value.
 
 **Good habits working with an AI assistant:**
 
@@ -215,13 +215,11 @@ The easiest way is to ask your AI assistant. Something like:
 
 > Add a new project page for "Project 4: <name>". Here's my description:
 > [*a paragraph about what I built and learned*]. My hero image is
-> `images/project04.png`. Follow the pattern in AGENTS.md.
+> `images/project04.png`. Follow the pattern of the existing pages.
 
 Under the hood, that means: copy `template.html` to `project04.html`, fill
 in the image/title/description, delete whichever optional blocks (gallery,
-video, code) don't apply, and add a matching card to `index.html`. See
-[AGENTS.md](./AGENTS.md) for the exact recipe your assistant should follow —
-worth skimming yourself too, so you can do it by hand if you ever need to.
+video, code) don't apply, and add a matching card to `index.html`.
 
 Other things you can ask for once the basics are in place:
 - *"Add a photo gallery to project04.html with these three images."*
@@ -231,8 +229,3 @@ Other things you can ask for once the basics are in place:
 
 Remember: after any change, save your work (Setup, step 7) so it actually
 reaches your live site.
-
-## For AI assistants
-
-See [AGENTS.md](./AGENTS.md) — it has the structural rules, the recipe for
-adding pages, and the content guardrails to follow.

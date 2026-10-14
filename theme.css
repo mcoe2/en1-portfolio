@@ -23,11 +23,16 @@
     --color-bg-page: #f4f4f4;       /* page background on activity/project pages */
     --color-bg-card: #ffffff;       /* white card/container background */
     --color-bg-overlay: rgba(74, 122, 110, 0.5); /* translucent header/hero overlay */
+    --color-bg-header-light: rgba(250, 250, 250, 0.92); /* header bar on activity/project pages */
+
+    /* Shadows */
+    --shadow-card: 0 6px 18px rgba(45, 36, 32, 0.14);        /* resting cards */
+    --shadow-card-hover: 0 14px 30px rgba(45, 36, 32, 0.22); /* cards on hover */
 
     /* Typography */
     --font-body: "Trebuchet MS", "Segoe UI", sans-serif;
 
     /* Shape */
     --radius: 10px;
-    --container-max: 800px;
+    --container-max: 960px;
 }

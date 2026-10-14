@@ -30,6 +30,9 @@ body {
 .header .name {
     text-align: left;
     font-size: 1.5em;
+    color: var(--color-text-on-dark);
+    text-decoration: none;
+    font-weight: 700;
 }
 
 .header .navbar {
@@ -429,49 +432,84 @@ body {
 /* Style for the project listing section */
 /* ************************************* */
 
+.portfolio-heading {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    padding-inline: 1.5rem;
+    color: var(--color-text-on-dark);
+    font-size: 2.2em;
+    scroll-margin-top: 100px; /* keeps the heading below the fixed header */
+}
+
 .portfolio {
-    padding-block: 5rem 2rem;
-    max-width: 100%;
-    margin-inline: 1.5rem;
+    padding-block: 1.5rem 3rem;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
 
     display: grid;
-    gap: 1.5rem;
+    gap: 1.75rem;
     grid-template-columns: repeat(3, 1fr);
     justify-items: stretch;
 }
 
 .project-card {
-    padding: 5px;
-    margin: 5px;
-    background-color: var(--color-accent);
+    overflow: hidden;
+    background-color: var(--color-bg-card);
+    border-top: 5px solid var(--color-accent);
     border-radius: var(--radius);
-    text-align: center;
+    box-shadow: var(--shadow-card);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
 }
 
 .project-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     color: var(--color-text-muted);
+    text-decoration: none;
 }
 
 .project-title {
-    font-size: 1.5em;
+    margin: 16px 18px 6px;
+    font-size: 1.25em;
+    color: var(--color-primary-dark);
 }
 
 .project-desc {
+    margin: 0 18px 18px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 
+/* The image comes last in the HTML but is shown first in the card */
 .project-img {
+    order: -1;
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
-    background-color: rgba(255, 255, 255, 0.18);
-    border-radius: calc(var(--radius) - 4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card {
+        transition: none;
+    }
+
+    .project-card:hover,
+    .project-card:focus-within {
+        transform: none;
+    }
 }
 
 /* ***************************** */
@@ -528,8 +566,14 @@ body {
         height: 18px;
     }
 
+    .portfolio-heading {
+        margin-top: 2.5rem;
+        padding-inline: 0.5rem;
+        font-size: 1.7em;
+    }
+
     .portfolio {
         grid-template-columns: 1fr;
-        margin-inline: 0.5rem;
+        padding-inline: 0.5rem;
     }
 }
