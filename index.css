@@ -71,10 +71,12 @@ a:focus-visible {
 
 .home {
     position: relative;
-    min-height: calc(100vh - 105px);
+    box-sizing: border-box; /* min-height includes the padding */
+    min-height: calc(100vh - 40px); /* fills the screen inside the page margin */
     display: flex;
     align-items: center;
-    padding: 3.25rem 10% 0.25rem;
+    /* Left padding starts the text just right of the tree */
+    padding: 4rem 4% 1.5rem 22%;
     margin: 0;
     overflow: hidden;
     color: var(--color-text-on-dark);
@@ -86,10 +88,11 @@ a:focus-visible {
 
 /* z-index keeps the intro text above the season tint, scenery, */
 /* elephant, and clickable hotspots                              */
+/* Narrow column in the open sky between the tree and the elephant */
 .home-content {
     position: relative;
     z-index: 4;
-    max-width: 600px;
+    max-width: min(480px, 40vw);
 }
 
 /* Text sits on solid, dark panels so it stays readable over */
@@ -98,7 +101,7 @@ a:focus-visible {
     position: relative;
     width: fit-content;
     margin: 0;
-    font-size: 56px;
+    font-size: clamp(34px, 4vw, 56px); /* scales with screen width */
     font-weight: 700;
     line-height: 1.15;
     background: var(--color-bg-text-panel);
@@ -109,9 +112,9 @@ a:focus-visible {
 
 .home-content p {
     position: relative;
-    font-size: 1.25em;
+    font-size: clamp(1rem, 0.6rem + 0.7vw, 1.15rem); /* scales with screen width */
     line-height: 1.6;
-    margin: 16px 0 24px;
+    margin: 16px 0 20px;
     background: var(--color-bg-text-panel);
     backdrop-filter: blur(6px);
     padding: 16px 20px;
@@ -231,11 +234,11 @@ a:focus-visible {
 
 .elephant-control {
     position: absolute;
-    right: 7%;
+    right: 4%;
     bottom: 1.5%;
     z-index: 2;
     display: block;
-    width: min(34vw, 460px);
+    width: min(30vw, 420px);
     padding: 0;
     border: 0;
     background: transparent;
@@ -490,17 +493,13 @@ a:focus-visible {
     animation: tree-sway 2s ease-in-out;
 }
 
-.scene-status {
-    position: absolute;
-    right: 7%;
-    bottom: 1%;
-    z-index: 2;
-    margin: 0;
-    padding: 6px 10px;
-    border-radius: var(--radius);
-    background: var(--color-bg-text-panel);
-    color: var(--color-text-on-dark);
-    font-size: 0.95em;
+/* Small hint under the social links, kept out of the scenery */
+.home-content .scene-hint {
+    width: fit-content;
+    margin: 12px 0 0;
+    padding: 6px 12px;
+    font-size: 0.9em;
+    line-height: 1.4;
 }
 
 /* Gust of wind: lean right, rock back, and settle */
@@ -683,6 +682,47 @@ a:focus-visible {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* On tablets and phones, fill the height with the scenery and   */
+    /* show its right side (sun and elephant). Text sits at the top, */
+    /* with room left at the bottom for the elephant to stand. The   */
+    /* tree is off to the left out of view, so it is hidden.         */
+    .home {
+        align-items: flex-start;
+        padding: 7rem 6% 18rem;
+        background-size: cover;
+        background-position: 80% center;
+    }
+
+    .home-content {
+        max-width: 520px;
+    }
+
+    .habitat-leaves,
+    .tree-effects,
+    .tree-hotspot,
+    .tree-hint {
+        display: none;
+    }
+
+    .sun-hotspot {
+        top: 12%;
+        right: 0;
+        width: 34%;
+        height: 16%;
+    }
+
+    .elephant-control {
+        right: 4%;
+        width: min(40vw, 300px);
+    }
+
+    .spring-flowers {
+        left: 6%;
+        right: 50%;
+        bottom: 4%;
+        height: 10%;
+    }
+
     .home-content h1 {
         font-size: 40px;
     }
@@ -706,39 +746,12 @@ a:focus-visible {
         gap: 10px;
     }
 
-    /* On a tall phone screen, fill the height with the scenery and */
-    /* show its right side (sun and elephant). The tree is off to    */
-    /* the left out of view, so its leaves and hotspot are hidden.   */
     .home {
-        padding: 7rem 6% 9rem;
-        background-size: cover;
-        background-position: 80% center;
-    }
-
-    .habitat-leaves,
-    .tree-effects,
-    .tree-hotspot,
-    .tree-hint {
-        display: none;
-    }
-
-    .sun-hotspot {
-        top: 12%;
-        right: 0;
-        width: 34%;
-        height: 16%;
+        padding-bottom: 12rem;
     }
 
     .elephant-control {
-        right: 4%;
         width: min(48vw, 220px);
-    }
-
-    .spring-flowers {
-        left: 6%;
-        right: 50%;
-        bottom: 4%;
-        height: 10%;
     }
 
     .home-content h1 {
@@ -746,7 +759,8 @@ a:focus-visible {
     }
 
     .home-content p {
-        font-size: 1.1em;
+        font-size: 0.98rem;
+        padding: 12px 16px;
     }
 
     .social-link {
