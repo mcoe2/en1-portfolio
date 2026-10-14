@@ -56,13 +56,14 @@
         <div class="seasonal-effects" aria-hidden="true">
             <div class="winter-snow">
                 <span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
             <div class="snow-ground"></div>
             <div class="spring-flowers">
                 <span></span><span></span><span></span><span></span><span></span>
             </div>
         </div>
-        <p class="scene-status" id="scene-status" aria-live="polite">Try the interactive scene.</p>
+        <p class="scene-status" id="scene-status" aria-live="polite">Click the sun<span class="tree-hint">, the tree,</span> or the elephant.</p>
     </section>
 
     <!-- Portfolio Section -->
@@ -164,10 +165,16 @@
         let seasonIndex = Math.floor(Math.random() * seasons.length);
         let seasonChanging = false;
 
+        // Show the random starting season instantly (no fade from spring),
+        // then turn transitions back on after the first frames are drawn.
+        home.classList.add('no-transition');
         for (const season of seasons) {
             home.classList.remove(`season-${season}`);
         }
         home.classList.add(`season-${seasons[seasonIndex]}`);
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => home.classList.remove('no-transition'));
+        });
 
         elephantControl.addEventListener('click', () => {
             elephantControl.classList.remove('dancing');
@@ -196,7 +203,9 @@
             home.classList.remove('breeze');
             void home.offsetWidth;
             home.classList.add('breeze');
-            sceneStatus.textContent = 'A breeze is moving through the tree.';
+            sceneStatus.textContent = seasons[seasonIndex] === 'winter'
+                ? 'The wind whistles through the bare branches.'
+                : 'A breeze is moving through the tree.';
         });
     </script>
     

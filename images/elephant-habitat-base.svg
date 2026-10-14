@@ -18,7 +18,12 @@
   </g>
   <path d="M0 555 C220 488 390 520 575 552 C770 588 930 498 1110 510 C1290 522 1450 470 1600 500 L1600 900 L0 900Z" fill="#759f63"/>
   <path d="M0 620 C170 565 370 594 540 620 C735 650 870 565 1050 580 C1280 598 1420 548 1600 590 L1600 900 L0 900Z" fill="url(#ground)"/>
-  <path d="M-10 570 C-7 442 0 365 11 292" fill="none" stroke="#496b48" stroke-width="20" stroke-linecap="round"/>
+  <!-- tree trunk and branches (leaves live in tree-leaves-*.svg) -->
+  <g fill="none" stroke="#6b4f3a" stroke-linecap="round">
+    <path d="M150 400 C120 370 104 344 92 312" stroke-width="16"/>
+    <path d="M152 380 C182 352 200 330 212 300" stroke-width="16"/>
+  </g>
+  <path d="M130 660 C140 580 142 480 138 340 L164 340 C160 480 164 580 176 660Z" fill="#6b4f3a"/>
   <g fill="#d3e27b" opacity=".9">
     <path d="M635 780 C642 714 650 670 666 630 C664 700 671 730 681 780Z"/>
     <path d="M690 800 C703 724 727 688 754 658 C735 727 738 762 746 803Z"/>
