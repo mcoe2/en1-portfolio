@@ -493,15 +493,6 @@ a:focus-visible {
     animation: tree-sway 2s ease-in-out;
 }
 
-/* Small hint under the social links, kept out of the scenery */
-.home-content .scene-hint {
-    width: fit-content;
-    margin: 12px 0 0;
-    padding: 6px 12px;
-    font-size: 0.9em;
-    line-height: 1.4;
-}
-
 /* Gust of wind: lean right, rock back, and settle */
 @keyframes tree-sway {
     0%, 100% { transform: rotate(0deg); }
@@ -699,8 +690,7 @@ a:focus-visible {
 
     .habitat-leaves,
     .tree-effects,
-    .tree-hotspot,
-    .tree-hint {
+    .tree-hotspot {
         display: none;
     }
 
