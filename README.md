@@ -201,7 +201,7 @@ theme.css           Colors/fonts used by both stylesheets, in one place
 template.html       Starting point for a new activity or project page
 activityNN.html     One in-class activity's page (e.g. activity01.html)
 projectNN.html      One project's page (e.g. project01.html)
-images/             All images, named to match their page (e.g. project04.png)
+images/             All images, named to match their page (e.g. project04.jpg)
 ```
 
 Each activity/project gets **one card** on the home page (image, title,
@@ -215,7 +215,7 @@ The easiest way is to ask your AI assistant. Something like:
 
 > Add a new project page for "Project 4: <name>". Here's my description:
 > [*a paragraph about what I built and learned*]. My hero image is
-> `images/project04.png`. Follow the pattern of the existing pages.
+> `images/project04.jpg`. Follow the pattern of the existing pages.
 
 Under the hood, that means: copy `template.html` to `project04.html`, fill
 in the image/title/description, delete whichever optional blocks (gallery,

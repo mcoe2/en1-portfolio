@@ -2,8 +2,14 @@
 
 body {
     background-color: var(--color-bg-page);
+    color: var(--color-text);
     font-family: var(--font-body);
     margin: 20px;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
 }
 
 /* **************************** */
@@ -39,15 +45,16 @@ body {
 
 .header .navbar {
     display: flex;
-    gap: 15px;
-    font-size: 1.5em;
+    gap: 6px;
+    font-size: 1.25em;
 }
 
 .header .navbar a {
     text-decoration: none;
     color: var(--color-primary);
-    padding: 10px;
+    padding: 8px 14px;
     border-radius: var(--radius);
+    transition: background-color 150ms ease, color 150ms ease;
 }
 
 .header .navbar a:hover {
@@ -100,26 +107,26 @@ body {
     line-height: 1.6;
 }
 
-.proj-desc p {
-    color: var(--color-text);
-}
-
 /* Optional block: a labeled code sample. Delete this block on pages   */
 /* that don't involve code (e.g. a build or design activity).          */
 .proj-code {
-    max-width: 700px;
-    margin: auto;
+    max-width: 760px;
+    margin: 0 auto 28px;
 }
 
-.proj-code pre:has(code), pre:has(code) {
-    background-color: black;
-    color: white;
-    border-radius: 8px;
-    padding: 4px;
+.proj-code pre {
+    background-color: var(--color-bg-code);
+    color: var(--color-text-code);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    overflow-x: auto;
 }
-pre code, pre code {
+
+.proj-code code {
+    font-family: var(--font-code);
+    font-size: 0.95rem;
     white-space: pre-wrap;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Optional block: a photo gallery grid. Use for pages with several  */
@@ -138,23 +145,21 @@ pre code, pre code {
     border-radius: var(--radius);
 }
 
-/* Optional block: an embedded video (e.g. YouTube). The padding-top  */
-/* trick keeps a 16:9 shape at any screen width — do not set a fixed  */
-/* pixel height on the iframe itself.                                  */
+/* Optional block: an embedded video (a YouTube <iframe> or a <video>). */
+/* aspect-ratio keeps a 16:9 shape at any screen width — do not set a   */
+/* fixed pixel height on the iframe/video itself.                       */
 .proj-video-container {
-    position: relative;
     width: 100%;
-    padding-top: 56.25%;
+    aspect-ratio: 16 / 9;
     margin: 20px 0;
     border-radius: var(--radius);
     overflow: hidden;
+    background: var(--color-bg-media);
 }
 
 .proj-video-container iframe,
 .proj-video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
     width: 100%;
     height: 100%;
     border: 0;
@@ -165,11 +170,10 @@ pre code, pre code {
     padding: 22px 24px;
     border-left: 5px solid var(--color-accent);
     border-radius: var(--radius);
-    background: rgba(224, 166, 106, 0.14);
+    background: var(--color-bg-accent-soft);
 }
 
-.proj-handout h2,
-.proj-section-title {
+.proj-handout h2 {
     margin: 0 0 8px;
     color: var(--color-primary-dark);
 }
@@ -194,8 +198,25 @@ pre code, pre code {
 }
 
 .proj-section-title {
-    margin-top: 0;
+    margin: 36px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-bg-accent-soft);
+    color: var(--color-primary-dark);
     font-size: 1.6rem;
+}
+
+/* "Back to portfolio" link at the bottom of every detail page */
+.proj-back {
+    display: inline-block;
+    margin-top: 32px;
+    color: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.proj-back:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
 }
 
 .proj-video-grid {
@@ -222,8 +243,12 @@ pre code, pre code {
     }
 
     .header .navbar {
-        font-size: 1.1em;
-        gap: 8px;
+        font-size: 1em;
+        gap: 2px;
+    }
+
+    .header .navbar a {
+        padding: 8px 10px;
     }
 
     .proj-container {
