@@ -288,3 +288,10 @@ a:focus-visible {
     font-size: 1rem;
     line-height: 1.6;
 }
+
+/* Vertical (phone-portrait) video: a tall box instead of 16:9. */
+.proj-video-container.portrait {
+    aspect-ratio: 9 / 16;
+    max-width: 360px;
+    margin-inline: auto;
+}
