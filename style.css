@@ -2,17 +2,20 @@
 /* Cartoon-elephant theme: Jumbo gray, Tufts blue, and pink ear accents. */
 
 :root {
-    --ink: #3f4753;          /* outlines and text */
-    --muted: #6b7584;
+    --ink: #3b2a1f;          /* outlines and text: dark chocolate */
+    --muted: #5a4232;
     --gray: #bcc6d2;         /* elephant skin */
-    --gray-light: #e6ebf1;
+    --gray-light: #cfdceb;   /* empty photo slots */
     --pink: #f6b6c6;         /* inner ears */
-    --pink-soft: #fde8ee;
-    --blue: #3172ae;         /* Tufts blue */
-    --blue-soft: #e3eef8;
-    --paper: #f6f8fb;
-    --card: #ffffff;
-    --code-bg: #2b313a;
+    --pink-soft: #f3e3cb;    /* cream accents */
+    --blue: #2a5f93;         /* Tufts blue, deepened for contrast */
+    --blue-soft: #c9dcee;
+    --paper: #d8bd96;        /* tan page background */
+    --paper-dot: #cdb085;
+    --brown: #5b3f2c;        /* header */
+    --cream: #f6ead8;
+    --card: #e4eef7;         /* pale blue cards */
+    --code-bg: #2e2018;
     --code-text: #eef2f6;
 
     --font-display: "Fredoka", "Nunito", system-ui, sans-serif;
@@ -43,7 +46,7 @@ body {
     line-height: 1.65;
     background-color: var(--paper);
     /* faint polka dots, like a storybook endpaper */
-    background-image: radial-gradient(var(--gray-light) 2px, transparent 2.5px);
+    background-image: radial-gradient(var(--paper-dot) 2px, transparent 2.5px);
     background-size: 28px 28px;
 }
 
@@ -84,7 +87,8 @@ h3 {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: var(--card);
+    background: var(--brown);
+    color: var(--cream);
     border-bottom: var(--line);
 }
 
@@ -130,8 +134,8 @@ h3 {
 }
 
 .site-nav a:hover {
-    background: var(--blue-soft);
-    color: var(--blue);
+    background: rgba(246, 234, 216, 0.16);
+    color: #fff;
 }
 
 /* ---------- Home: intro with the mascot ---------- */
@@ -538,7 +542,8 @@ h3 {
     position: relative;
     margin-top: 40px;
     padding: 56px 0 64px;
-    background: var(--gray);
+    background: var(--blue);
+    color: var(--cream);
     border-top: var(--line);
 }
 
@@ -571,6 +576,7 @@ h3 {
 .contact-links a {
     padding: 8px 18px;
     background: var(--card);
+    color: var(--ink);
     border: var(--line);
     border-radius: 999px;
     box-shadow: 3px 3px 0 var(--ink);
