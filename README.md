@@ -105,8 +105,7 @@ left sidebar) to make the changes for you. For example:
 Things to personalize:
 
 - [ ] Your name, replacing `FIRSTNAME LASTNAME` everywhere it appears.
-- [ ] Your own header/banner image, replacing `images/header.jpg`.
-- [ ] Your LinkedIn and GitHub links in `index.html`'s social box.
+- [ ] Your LinkedIn and GitHub links in the footer of each page.
 - [ ] Confirm you have the rights to publish any images you use — swap out
       any placeholder/stock images that aren't yours.
 
@@ -194,10 +193,8 @@ instructor, or a recruiter.
 ## How the site is organized
 
 ```
-index.html          Home page — intro + a grid of cards, one per activity/project
-index.css           Styles just for the home page
-project.css         Shared styles for every activity/project detail page
-theme.css           Colors/fonts used by both stylesheets, in one place
+index.html          Home page — intro, a Projects grid and an Activities grid
+style.css           All the styles for every page; colors and fonts are at the top
 template.html       Starting point for a new activity or project page
 activityNN.html     One in-class activity's page (e.g. activity01.html)
 projectNN.html      One project's page (e.g. project01.html)
@@ -206,8 +203,9 @@ images/             All images, named to match their page (e.g. project04.jpg)
 
 Each activity/project gets **one card** on the home page (image, title,
 one-line description) that links to **one detail page** with the fuller
-write-up: a hero image, a description, and optionally a photo gallery,
-an embedded video, or a code sample.
+write-up: a video or photo at the top, a description, and optionally more
+videos, photos, a handout link, or a code sample. Unfinished pages get an
+"In progress" tag on their home-page card.
 
 ## Adding a new activity or project
 
@@ -224,8 +222,8 @@ video, code) don't apply, and add a matching card to `index.html`.
 Other things you can ask for once the basics are in place:
 - *"Add a photo gallery to project04.html with these three images."*
 - *"Embed my YouTube video <link> on project04.html."*
-- *"Change the site's accent color to blue"* — this only requires editing
-  `theme.css`, since both stylesheets pull their colors from there.
+- *"Change the site's accent color"* — this only requires editing the
+  `--accent` color at the top of `style.css`.
 
 Remember: after any change, save your work (Setup, step 7) so it actually
 reaches your live site.

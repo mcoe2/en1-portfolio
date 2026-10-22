@@ -2,63 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Project 3: Biomimicry</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Project 3: Biomimicry - from Max Coe's engineering portfolio.">
-    <link rel="stylesheet" href="./project.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Biomimicry · Max Coe</title>
+    <meta name="description" content="Project 3: Biomimicry, from Max Coe's engineering portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-    <!-- Header and Navigation Section -->
-    <header class="header">
-        <a class="name" href="./index.html">Max Coe</a>
-        <nav class="navbar">
-            <a href="./index.html">Home</a>
-            <a href="./index.html#portfolio">Portfolio</a>
-        </nav>
+    <header class="site-header">
+        <div class="wrap">
+            <a class="site-name" href="./index.html">Max Coe</a>
+            <nav class="site-nav">
+                <a href="./index.html#projects">Projects</a>
+                <a href="./index.html#activities">Activities</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Project Information -->
-    <div class="proj-container">
+    <main class="wrap page">
+        <a class="back" href="./index.html">&larr; All work</a>
+        <p class="page-meta">Project 3 &middot; September 2026</p>
+        <h1>Biomimicry</h1>
 
-        <h1 class='proj-header'>Project 3: Biomimicry</h1>
+        <figure class="media video">
+            <video controls playsinline preload="metadata" poster="./images/project03.jpg" aria-label="LEGO elephant trunk curling around a branch">
+                <source src="./images/project03-video1.mp4" type="video/mp4">
+            </video>
+        </figure>
 
-        <div class="proj-img-container">
-            <img src="./images/project03.jpg" alt="LEGO elephant trunk mechanism">
+        <div class="prose">
+            <p>For my biomimicry project, I designed a LEGO elephant trunk that mimics the way a real elephant uses its trunk to curl around and grip objects. The trunk is made from connected LEGO pieces that allow it to bend and curl around a branch. A motor controls the movement, demonstrating how a mechanical system can recreate the flexibility and gripping motion of an elephant&rsquo;s trunk.</p>
         </div>
 
-        <div class="proj-desc">
-            <p>For my biomimicry project, I designed a LEGO elephant trunk that mimics the way a real elephant uses its trunk to curl around and grip objects. The trunk is made from connected LEGO pieces that allow it to bend and curl around a branch. A motor controls the movement, demonstrating how a mechanical system can recreate the flexibility and gripping motion of an elephant's trunk.</p>
-        </div>
+        <a class="link-card" href="./images/project03-handout.jpg" target="_blank" rel="noopener">
+            Project handout <span>Background and design work &rarr;</span>
+        </a>
 
-        <div class="proj-handout">
-            <h2>Project handout</h2>
-            <p>Read the handout for the project background and design work.</p>
-            <a href="./images/project03-handout.jpg" target="_blank" rel="noopener">View the handout</a>
-        </div>
+        <h2>Another look</h2>
 
-        <h2 class="proj-section-title">Project demonstrations</h2>
+        <figure class="media video">
+            <video controls playsinline preload="metadata" aria-label="Second demonstration of the elephant trunk">
+                <source src="./images/project03-video2.mp4" type="video/mp4">
+            </video>
+        </figure>
 
-        <div class="proj-video-grid">
-            <div class="proj-video-container">
-                <video controls playsinline preload="metadata" aria-label="Project 3: Biomimicry - demonstration video 1">
-                    <source src="./images/project03-video1.mp4" type="video/mp4">
-                    Your browser does not support this video.
-                </video>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="wrap">
+            <h2>Get in touch</h2>
+            <p>Engineering student at Tufts University.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/max-coe-9aa770360" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:mcoe02@tufts.edu">mcoe02@tufts.edu</a>
+                <a href="https://github.com/mcoe2" target="_blank" rel="noopener">GitHub</a>
             </div>
-
-            <div class="proj-video-container">
-                <video controls playsinline preload="metadata" aria-label="Project 3: Biomimicry - demonstration video 2">
-                    <source src="./images/project03-video2.mp4" type="video/mp4">
-                    Your browser does not support this video.
-                </video>
-            </div>
         </div>
-
-        <a class="proj-back" href="./index.html#portfolio">&larr; Back to portfolio</a>
-
-    </div>
-    <!-- End Project Information -->
+    </footer>
 
 </body>
 </html>

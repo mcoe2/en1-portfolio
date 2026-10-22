@@ -2,72 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TITLE GOES HERE</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="TITLE GOES HERE - from Max Coe's engineering portfolio.">
-    <link rel="stylesheet" href="./project.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TITLE · Max Coe</title>
+    <meta name="description" content="Project N: TITLE, from Max Coe's engineering portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-    <!-- This file is a STARTING POINT, not a real page. -->
-    <!-- To add a new activity or project: copy this file, rename it -->
-    <!-- (e.g. project04.html), fill in the content below, then add a -->
-    <!-- matching <article class="project-card"> link to index.html. -->
+    <!-- This file is a STARTING POINT, not a real page. To add a new     -->
+    <!-- activity or project: copy this file (e.g. to project11.html),     -->
+    <!-- fill it in, delete the optional blocks you don't need, then add a -->
+    <!-- matching <a class="tile"> to the right grid in index.html.        -->
 
-    <!-- Header and Navigation Section -->
-    <header class="header">
-        <a class="name" href="./index.html">Max Coe</a>
-        <nav class="navbar">
-            <a href="./index.html">Home</a>
-            <a href="./index.html#portfolio">Portfolio</a>
-        </nav>
+    <header class="site-header">
+        <div class="wrap">
+            <a class="site-name" href="./index.html">Max Coe</a>
+            <nav class="site-nav">
+                <a href="./index.html#projects">Projects</a>
+                <a href="./index.html#activities">Activities</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Project Information -->
-    <div class="proj-container">
+    <main class="wrap page">
+        <a class="back" href="./index.html">&larr; All work</a>
+        <p class="page-meta">Project N &middot; MONTH 2026</p>
+        <h1>TITLE</h1>
 
-        <h1 class='proj-header'>Project N: TITLE GOES HERE</h1>
+        <!-- Top media: a video (add class "portrait" for a vertical video)... -->
+        <figure class="media video">
+            <video controls playsinline preload="metadata" poster="./images/projectNN.jpg" aria-label="DESCRIBE THE VIDEO">
+                <source src="./images/projectNN-video1.mp4" type="video/mp4">
+            </video>
+        </figure>
 
-        <div class="proj-img-container">
-            <img src="./images/header.jpg" alt="DESCRIBE THE IMAGE HERE">
-            <!-- Replace with this page's own hero image, e.g. ./images/project04.jpg -->
+        <!-- ...or a photo, if there's no video. -->
+        <figure class="media">
+            <img src="./images/projectNN.jpg" alt="DESCRIBE THE PHOTO">
+        </figure>
+
+        <div class="prose">
+            <p>Describe the project here: the goal, your approach, and what you learned. Write this yourself — an AI assistant should never invent your results.</p>
         </div>
 
-        <div class="proj-desc">
-            <p>Describe the activity or project here: the goal, your approach, and what you learned. Write this yourself — an AI assistant should never invent your results.</p>
+        <!-- OPTIONAL: more photos, two per row -->
+        <div class="media-grid">
+            <figure class="media"><img src="./images/projectNN-photo1.jpg" alt="DESCRIBE"></figure>
+            <figure class="media"><img src="./images/projectNN-photo2.jpg" alt="DESCRIBE"></figure>
         </div>
 
-        <!-- OPTIONAL BLOCK: photo gallery. Use when you have several   -->
-        <!-- work-in-progress or detail photos beyond the hero image     -->
-        <!-- above. Delete this whole <div> if you don't need it.        -->
-        <div class="proj-gallery">
-            <img src="./images/activity01.png">
-            <img src="./images/activity02.png">
-            <img src="./images/activity03.jpg">
+        <!-- OPTIONAL: code -->
+        <h2>Code</h2>
+        <div class="code">
+            <pre><code>for i in range(4):
+    print(i)</code></pre>
         </div>
 
-        <!-- OPTIONAL BLOCK: embedded video (e.g. a YouTube demo of your -->
-        <!-- project in action). Replace VIDEO_ID with the id from the   -->
-        <!-- video's share/embed URL. Delete this <div> if not needed.   -->
-        <div class="proj-video-container">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Project video" allowfullscreen></iframe>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="wrap">
+            <h2>Get in touch</h2>
+            <p>Engineering student at Tufts University.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/max-coe-9aa770360" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:mcoe02@tufts.edu">mcoe02@tufts.edu</a>
+                <a href="https://github.com/mcoe2" target="_blank" rel="noopener">GitHub</a>
+            </div>
         </div>
-
-        <!-- OPTIONAL BLOCK: a labeled code sample. Only include this on -->
-        <!-- pages that actually involve code (e.g. a robot's Arduino    -->
-        <!-- sketch). Delete this whole <div> for design/build projects. -->
-        <div class="proj-code">
-            <h3>Code:</h3>
-            <pre><code>
-for i in range(4):
-    print(i)
-
-</code></pre></div>
-
-        <a class="proj-back" href="./index.html#portfolio">&larr; Back to portfolio</a>
-
-    </div>
-    <!-- End Project Information -->
+    </footer>
 
 </body>
 </html>

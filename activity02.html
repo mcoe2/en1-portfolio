@@ -2,39 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Activity 2: Object Redesign</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Activity 2: Object Redesign - from Max Coe's engineering portfolio.">
-    <link rel="stylesheet" href="./project.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Object Redesign · Max Coe</title>
+    <meta name="description" content="Activity 2: Object Redesign, from Max Coe's engineering portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-    <!-- Header and Navigation Section -->
-    <header class="header">
-        <a class="name" href="./index.html">Max Coe</a>
-        <nav class="navbar">
-            <a href="./index.html">Home</a>
-            <a href="./index.html#portfolio">Portfolio</a>
-        </nav>
+    <header class="site-header">
+        <div class="wrap">
+            <a class="site-name" href="./index.html">Max Coe</a>
+            <nav class="site-nav">
+                <a href="./index.html#projects">Projects</a>
+                <a href="./index.html#activities">Activities</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Project Information -->
-    <div class="proj-container">
+    <main class="wrap page">
+        <a class="back" href="./index.html">&larr; All work</a>
+        <p class="page-meta">Activity 2 &middot; September 2026</p>
+        <h1>Object Redesign</h1>
 
-        <h1 class='proj-header'>Activity 2: Object Redesign</h1>
+        <figure class="media">
+            <img src="./images/activity02.png" alt="Exploded view of the redesigned blender's parts">
+        </figure>
 
-        <div class="proj-img-container">
-            <img src="./images/activity02.png" alt="Exploded view of the redesigned object's parts">
-        </div>
-
-        <div class="proj-desc">
+        <div class="prose">
             <p>For Activity 2, I took an everyday object, a blender, and redesigned it for a completely different purpose: stopping tornadoes. The goal of the activity was to think creatively and take an existing design somewhere totally new.</p>
         </div>
 
-        <a class="proj-back" href="./index.html#portfolio">&larr; Back to portfolio</a>
+    </main>
 
-    </div>
-    <!-- End Project Information -->
+    <footer class="site-footer" id="contact">
+        <div class="wrap">
+            <h2>Get in touch</h2>
+            <p>Engineering student at Tufts University.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/max-coe-9aa770360" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:mcoe02@tufts.edu">mcoe02@tufts.edu</a>
+                <a href="https://github.com/mcoe2" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

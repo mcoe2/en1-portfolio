@@ -2,47 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Project 4: Top Spinner</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Project 4: Top Spinner - from Max Coe's engineering portfolio.">
-    <link rel="stylesheet" href="./project.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Top Spinner · Max Coe</title>
+    <meta name="description" content="Project 4: Top Spinner, from Max Coe's engineering portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-    <header class="header">
-        <a class="name" href="./index.html">Max Coe</a>
-        <nav class="navbar">
-            <a href="./index.html">Home</a>
-            <a href="./index.html#portfolio">Portfolio</a>
-        </nav>
+    <header class="site-header">
+        <div class="wrap">
+            <a class="site-name" href="./index.html">Max Coe</a>
+            <nav class="site-nav">
+                <a href="./index.html#projects">Projects</a>
+                <a href="./index.html#activities">Activities</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="proj-container">
+    <main class="wrap page">
+        <a class="back" href="./index.html">&larr; All work</a>
+        <p class="page-meta">Project 4 &middot; September 2026</p>
+        <h1>Top Spinner</h1>
 
-        <h1 class='proj-header'>Project 4: Top Spinner</h1>
+        <figure class="media video">
+            <video controls playsinline preload="metadata" poster="./images/project04.jpg" aria-label="Spinning top launched with a geared mechanism">
+                <source src="./images/project04-video1.mp4" type="video/mp4">
+            </video>
+        </figure>
 
-        <div class="proj-img-container">
-            <img src="./images/project04.jpg" alt="Spinning top design using gear ratios">
-        </div>
-
-        <div class="proj-desc">
+        <div class="prose">
             <p>For Project 4, I designed and tested a spinning top that used gear ratios to control how fast the top spun. I explored how different gear combinations changed the speed and motion of the mechanism, and I adjusted the design to improve stability and performance. This project helped me connect mechanical design to the way forces and motion transfer through a system.</p>
         </div>
 
-        <h2 class="proj-section-title">Project demonstration</h2>
+    </main>
 
-        <div class="proj-video-grid">
-            <div class="proj-video-container">
-                <video controls playsinline preload="metadata" aria-label="Project 4: Top Spinner - demonstration video">
-                    <source src="./images/project04-video1.mp4" type="video/mp4">
-                    Your browser does not support this video.
-                </video>
+    <footer class="site-footer" id="contact">
+        <div class="wrap">
+            <h2>Get in touch</h2>
+            <p>Engineering student at Tufts University.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/max-coe-9aa770360" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:mcoe02@tufts.edu">mcoe02@tufts.edu</a>
+                <a href="https://github.com/mcoe2" target="_blank" rel="noopener">GitHub</a>
             </div>
         </div>
-
-        <a class="proj-back" href="./index.html#portfolio">&larr; Back to portfolio</a>
-
-    </div>
+    </footer>
 
 </body>
 </html>

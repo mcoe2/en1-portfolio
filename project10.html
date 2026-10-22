@@ -2,63 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Project 10: Haunted House</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Project 10: Haunted House - from Max Coe's engineering portfolio.">
-    <link rel="stylesheet" href="./project.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Haunted House · Max Coe</title>
+    <meta name="description" content="Project 10: Haunted House, from Max Coe's engineering portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-    <header class="header">
-        <a class="name" href="./index.html">Max Coe</a>
-        <nav class="navbar">
-            <a href="./index.html">Home</a>
-            <a href="./index.html#portfolio">Portfolio</a>
-        </nav>
+    <header class="site-header">
+        <div class="wrap">
+            <a class="site-name" href="./index.html">Max Coe</a>
+            <nav class="site-nav">
+                <a href="./index.html#projects">Projects</a>
+                <a href="./index.html#activities">Activities</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="proj-container">
+    <main class="wrap page">
+        <a class="back" href="./index.html">&larr; All work</a>
+        <p class="page-meta">Project 10 &middot; November 2026</p>
+        <h1>Haunted House</h1>
 
-        <h1 class='proj-header'>Project 10: Haunted House</h1>
-
-        <div class="proj-img-container">
-            <img src="./images/project10.jpg" alt="Haunted House exhibit">
-        </div>
-
-        <div class="proj-desc">
+        <div class="prose">
             <p>For Project 10, my group designed and built an exhibit for the EN1 Haunted House in the Nolop Makerspace on October 30th.</p>
         </div>
 
-        <div class="proj-todo">
-            <p><strong>TO ADD:</strong> Your group members, what your exhibit does, and how the technical parts work.</p>
-        </div>
+        <!-- TO ADD: group members, what the exhibit does and how it works; photo images/project10.jpg; a technical demo video and one from the Haunted House; Python code. -->
 
-        <h2 class="proj-section-title">Project demonstrations</h2>
+    </main>
 
-        <div class="proj-video-grid">
-            <div class="proj-video-container">
-                <video controls playsinline preload="metadata" aria-label="Project 10: Haunted House - technical demonstration">
-                    <source src="./images/project10-video1.mp4" type="video/mp4">
-                    Your browser does not support this video.
-                </video>
-            </div>
-
-            <div class="proj-video-container">
-                <video controls playsinline preload="metadata" aria-label="Project 10: Haunted House - exhibit in action">
-                    <source src="./images/project10-video2.mp4" type="video/mp4">
-                    Your browser does not support this video.
-                </video>
+    <footer class="site-footer" id="contact">
+        <div class="wrap">
+            <h2>Get in touch</h2>
+            <p>Engineering student at Tufts University.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/max-coe-9aa770360" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:mcoe02@tufts.edu">mcoe02@tufts.edu</a>
+                <a href="https://github.com/mcoe2" target="_blank" rel="noopener">GitHub</a>
             </div>
         </div>
-
-        <div class="proj-code">
-            <h3>Code:</h3>
-            <pre><code># TO ADD: paste your SPIKE Prime Python code here, with comments
-</code></pre></div>
-
-        <a class="proj-back" href="./index.html#portfolio">&larr; Back to portfolio</a>
-
-    </div>
+    </footer>
 
 </body>
 </html>

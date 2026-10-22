@@ -2,39 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Activity 3: Paper Airplane</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Activity 3: Paper Airplane - from Max Coe's engineering portfolio.">
-    <link rel="stylesheet" href="./project.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paper Airplane · Max Coe</title>
+    <meta name="description" content="Activity 3: Paper Airplane, from Max Coe's engineering portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-    <!-- Header and Navigation Section -->
-    <header class="header">
-        <a class="name" href="./index.html">Max Coe</a>
-        <nav class="navbar">
-            <a href="./index.html">Home</a>
-            <a href="./index.html#portfolio">Portfolio</a>
-        </nav>
+    <header class="site-header">
+        <div class="wrap">
+            <a class="site-name" href="./index.html">Max Coe</a>
+            <nav class="site-nav">
+                <a href="./index.html#projects">Projects</a>
+                <a href="./index.html#activities">Activities</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Project Information -->
-    <div class="proj-container">
+    <main class="wrap page">
+        <a class="back" href="./index.html">&larr; All work</a>
+        <p class="page-meta">Activity 3 &middot; September 2026</p>
+        <h1>Paper Airplane</h1>
 
-        <h1 class='proj-header'>Activity 3: Paper Airplane</h1>
+        <figure class="media">
+            <img src="./images/activity03.jpg" alt="Paper airplane">
+        </figure>
 
-        <div class="proj-img-container">
-            <img src="./images/activity03.jpg" alt="Paper airplane design created with AI guidance">
-        </div>
-
-        <div class="proj-desc">
+        <div class="prose">
             <p>For Activity 3, I used AI to help guide my paper airplane design. I tested different wing shapes and fold patterns to improve how the airplane flew and how stable it was in the air. The goal was to combine the AI suggestions with my own trial-and-error testing to create a plane that flew farther and more smoothly.</p>
         </div>
 
-        <a class="proj-back" href="./index.html#portfolio">&larr; Back to portfolio</a>
+    </main>
 
-    </div>
-    <!-- End Project Information -->
+    <footer class="site-footer" id="contact">
+        <div class="wrap">
+            <h2>Get in touch</h2>
+            <p>Engineering student at Tufts University.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/max-coe-9aa770360" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:mcoe02@tufts.edu">mcoe02@tufts.edu</a>
+                <a href="https://github.com/mcoe2" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
