@@ -275,3 +275,16 @@ a:focus-visible {
         height: 120px;
     }
 }
+
+/* Placeholder box for content still to be added (your own results,  */
+/* reflection, code). Delete each one once you've filled it in.       */
+.proj-todo {
+    max-width: 68ch;
+    margin: 0 auto 28px;
+    padding: 14px 18px;
+    border: 2px dashed currentColor;
+    border-radius: var(--radius);
+    opacity: 0.75;
+    font-size: 1rem;
+    line-height: 1.6;
+}
