@@ -1,19 +1,26 @@
 /* One stylesheet for the whole site: home page and every project page. */
+/* Cartoon-elephant theme: Jumbo gray, Tufts blue, and pink ear accents. */
 
 :root {
-    --text: #16181d;
-    --muted: #5f6672;
-    --line: #e4e7eb;
-    --surface: #f4f6f8;
-    --bg: #ffffff;
-    --accent: #3172ae;       /* Tufts blue */
-    --accent-soft: #e8f0f8;
-    --code-bg: #16181d;
-    --code-text: #e9edf2;
+    --ink: #3f4753;          /* outlines and text */
+    --muted: #6b7584;
+    --gray: #bcc6d2;         /* elephant skin */
+    --gray-light: #e6ebf1;
+    --pink: #f6b6c6;         /* inner ears */
+    --pink-soft: #fde8ee;
+    --blue: #3172ae;         /* Tufts blue */
+    --blue-soft: #e3eef8;
+    --paper: #f6f8fb;
+    --card: #ffffff;
+    --code-bg: #2b313a;
+    --code-text: #eef2f6;
 
-    --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-display: "Fredoka", "Nunito", system-ui, sans-serif;
+    --font: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-    --radius: 10px;
+    --line: 3px solid var(--ink);
+    --pop: 5px 5px 0 var(--ink);
+    --radius: 22px;
     --width: 1080px;
     --gutter: 24px;
 }
@@ -30,12 +37,14 @@ html {
 
 body {
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
+    color: var(--ink);
     font-family: var(--font);
     font-size: 17px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+    background-color: var(--paper);
+    /* faint polka dots, like a storybook endpaper */
+    background-image: radial-gradient(var(--gray-light) 2px, transparent 2.5px);
+    background-size: 28px 28px;
 }
 
 img,
@@ -48,10 +57,18 @@ a {
     color: inherit;
 }
 
-a:focus-visible {
-    outline: 2px solid var(--accent);
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--blue);
     outline-offset: 3px;
-    border-radius: 4px;
+    border-radius: 8px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
 }
 
 .wrap {
@@ -67,64 +84,158 @@ a:focus-visible {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
+    background: var(--card);
+    border-bottom: var(--line);
 }
 
 .site-header .wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
+    height: 68px;
 }
 
 .site-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
     font-weight: 600;
     text-decoration: none;
-    letter-spacing: -0.01em;
+}
+
+.site-name img {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.site-name:hover img {
+    animation: wiggle 0.5s ease;
 }
 
 .site-nav {
     display: flex;
-    gap: 24px;
+    gap: 6px;
 }
 
 .site-nav a {
-    color: var(--muted);
-    text-decoration: none;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 700;
     font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s ease;
 }
 
 .site-nav a:hover {
-    color: var(--text);
+    background: var(--blue-soft);
+    color: var(--blue);
 }
 
-/* ---------- Home: intro ---------- */
+/* ---------- Home: intro with the mascot ---------- */
 
 .intro {
-    padding-top: 96px;
-    padding-bottom: 72px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8px;
+    padding-top: 56px;
+    padding-bottom: 64px;
+    text-align: center;
+}
+
+@media (min-width: 760px) {
+    .intro {
+        grid-template-columns: 300px 1fr;
+        justify-items: start;
+        align-items: center;
+        gap: 40px;
+        padding-top: 72px;
+        text-align: left;
+    }
+}
+
+.mascot {
+    width: 240px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+@media (min-width: 760px) {
+    .mascot {
+        width: 300px;
+    }
+}
+
+.mascot svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.bubble {
+    position: relative;
+    padding: 28px 32px;
+    background: var(--card);
+    border: var(--line);
+    border-radius: 28px;
+    box-shadow: var(--pop);
+}
+
+/* speech-bubble tail pointing at the elephant */
+.bubble::before,
+.bubble::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -22px;
+    border: 11px solid transparent;
+    border-bottom-color: var(--ink);
+    transform: translateX(-50%);
+}
+
+.bubble::after {
+    top: -16px;
+    border-bottom-color: var(--card);
+}
+
+@media (min-width: 760px) {
+    .bubble::before,
+    .bubble::after {
+        left: -22px;
+        top: 50%;
+        border-color: transparent;
+        border-right-color: var(--ink);
+        transform: translateY(-50%);
+    }
+
+    .bubble::after {
+        left: -16px;
+        border-right-color: var(--card);
+    }
 }
 
 .intro h1 {
     margin: 0;
-    font-size: clamp(2.6rem, 7vw, 4.2rem);
-    font-weight: 600;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
     line-height: 1.05;
-    letter-spacing: -0.035em;
 }
 
 .intro .lede {
-    margin: 12px 0 0;
-    font-size: clamp(1.25rem, 3vw, 1.6rem);
-    color: var(--muted);
-    letter-spacing: -0.01em;
+    margin: 8px 0 0;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: var(--blue);
 }
 
 .intro .course {
-    margin: 28px 0 0;
-    max-width: 52ch;
+    margin: 16px 0 0;
+    max-width: 50ch;
     color: var(--muted);
 }
 
@@ -139,34 +250,27 @@ a:focus-visible {
     align-items: baseline;
     justify-content: space-between;
     gap: 16px;
-    margin: 0 0 24px;
-    padding-top: 24px;
-    border-top: 1px solid var(--line);
+    margin: 0 0 28px;
 }
 
 .section-head h2 {
     margin: 0;
-    font-size: 1.35rem;
-    font-weight: 600;
-    letter-spacing: -0.015em;
+    font-size: 2rem;
 }
 
 .section-head span {
     color: var(--muted);
-    font-size: 0.95rem;
+    font-weight: 700;
 }
 
 .grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px 28px;
+    gap: 32px 28px;
 }
 
 @media (min-width: 640px) {
-    .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
+    .grid,
     .grid.small {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -180,7 +284,22 @@ a:focus-visible {
 
 .tile {
     display: block;
+    padding: 12px 12px 18px;
+    background: var(--card);
+    border: var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--pop);
     text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tile:hover {
+    transform: translate(-3px, -3px) rotate(-1deg);
+    box-shadow: 8px 8px 0 var(--ink);
+}
+
+.tile:nth-child(even):hover {
+    transform: translate(-3px, -3px) rotate(1deg);
 }
 
 .tile-media {
@@ -188,61 +307,68 @@ a:focus-visible {
     aspect-ratio: 4 / 3;
     margin: 0 0 14px;
     overflow: hidden;
-    border-radius: var(--radius);
-    background: var(--surface);
+    border-radius: 14px;
+    background: var(--gray-light);
 }
 
 .tile-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
 }
 
-.tile:hover .tile-media img {
-    transform: scale(1.03);
-}
-
-/* Shown in place of a photo until one is added */
+/* Shown in place of a photo until one is added: a sleepy elephant */
 .tile-placeholder {
     position: absolute;
     inset: 0;
     display: grid;
     place-items: center;
-    color: #b3bac4;
-    font-size: clamp(2rem, 6vw, 3rem);
+    background: var(--gray-light) url("./images/jumbo.svg") center 42% / 38% no-repeat;
+    opacity: 0.85;
+}
+
+.tile-placeholder span {
+    align-self: end;
+    margin-bottom: 14px;
+    font-family: var(--font-display);
     font-weight: 600;
-    letter-spacing: -0.03em;
+    color: var(--muted);
+}
+
+.tile-meta,
+.tile h3 {
+    padding: 0 6px;
 }
 
 .tile-meta {
     margin: 0;
     color: var(--muted);
     font-size: 0.875rem;
+    font-weight: 700;
 }
 
 .tile h3 {
     margin: 2px 0 0;
-    font-size: 1.15rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    transition: color 0.2s ease;
+    font-size: 1.3rem;
+    line-height: 1.25;
 }
 
 .tile:hover h3 {
-    color: var(--accent);
+    color: var(--blue);
 }
 
 .tag {
     display: inline-block;
-    margin-left: 8px;
-    padding: 1px 8px;
+    margin-left: 6px;
+    padding: 1px 10px;
+    border: 2px solid var(--ink);
     border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-size: 0.75rem;
-    font-weight: 500;
-    vertical-align: 2px;
+    background: var(--pink-soft);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 0.72rem;
+    font-weight: 700;
+    vertical-align: 3px;
     white-space: nowrap;
 }
 
@@ -250,42 +376,53 @@ a:focus-visible {
 
 .page {
     max-width: 860px;
-    padding-top: 56px;
-    padding-bottom: 72px;
+    padding-top: 48px;
+    padding-bottom: 80px;
 }
 
 .back {
     display: inline-block;
-    margin-bottom: 32px;
-    color: var(--muted);
+    margin-bottom: 28px;
+    padding: 6px 16px;
+    background: var(--card);
+    border: var(--line);
+    border-radius: 999px;
+    box-shadow: 3px 3px 0 var(--ink);
+    font-weight: 700;
     font-size: 0.95rem;
     text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .back:hover {
-    color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--ink);
 }
 
 .page-meta {
+    display: inline-block;
     margin: 0;
-    color: var(--accent);
-    font-size: 0.95rem;
-    font-weight: 500;
+    padding: 2px 14px;
+    border-radius: 999px;
+    background: var(--blue-soft);
+    color: var(--blue);
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
 .page h1 {
-    margin: 6px 0 32px;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 600;
+    margin: 10px 0 32px;
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
     line-height: 1.1;
-    letter-spacing: -0.03em;
 }
 
 .media {
     margin: 0 0 40px;
     overflow: hidden;
+    border: var(--line);
     border-radius: var(--radius);
-    background: var(--surface);
+    box-shadow: var(--pop);
+    background: var(--gray-light);
 }
 
 .media img,
@@ -295,7 +432,7 @@ a:focus-visible {
 
 .media.video {
     aspect-ratio: 16 / 9;
-    background: #000;
+    background: #1f2630;
 }
 
 .media.video video {
@@ -311,8 +448,12 @@ a:focus-visible {
 }
 
 .prose {
-    max-width: 66ch;
+    max-width: 68ch;
     margin: 0 0 40px;
+    padding: 24px 28px;
+    background: var(--card);
+    border: var(--line);
+    border-radius: var(--radius);
     font-size: 1.08rem;
     line-height: 1.75;
 }
@@ -327,15 +468,13 @@ a:focus-visible {
 
 .page h2 {
     margin: 48px 0 16px;
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: -0.015em;
+    font-size: 1.6rem;
 }
 
 .media-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 24px;
     margin: 0 0 40px;
 }
 
@@ -353,6 +492,7 @@ a:focus-visible {
     margin: 0 0 40px;
     padding: 20px 22px;
     overflow-x: auto;
+    border: var(--line);
     border-radius: var(--radius);
     background: var(--code-bg);
     color: var(--code-text);
@@ -366,41 +506,60 @@ a:focus-visible {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    max-width: 66ch;
+    max-width: 68ch;
     margin: 0 0 40px;
-    padding: 18px 20px;
-    border: 1px solid var(--line);
+    padding: 18px 22px;
+    background: var(--pink-soft);
+    border: var(--line);
     border-radius: var(--radius);
+    box-shadow: 4px 4px 0 var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
     text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .link-card:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
 }
 
 .link-card span {
-    color: var(--muted);
+    font-family: var(--font);
     font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--muted);
 }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer: the elephant peeks over the top ---------- */
 
 .site-footer {
-    border-top: 1px solid var(--line);
-    padding: 48px 0 64px;
+    position: relative;
+    margin-top: 40px;
+    padding: 56px 0 64px;
+    background: var(--gray);
+    border-top: var(--line);
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: -54px;
+    right: max(24px, calc((100% - var(--width)) / 2 + 24px));
+    width: 96px;
+    height: 84px;
+    background: url("./images/jumbo.svg") center top / contain no-repeat;
 }
 
 .site-footer h2 {
-    margin: 0 0 6px;
-    font-size: 1.35rem;
-    font-weight: 600;
-    letter-spacing: -0.015em;
+    margin: 0 0 4px;
+    font-size: 1.8rem;
 }
 
 .site-footer p {
     margin: 0 0 20px;
-    color: var(--muted);
+    font-weight: 700;
 }
 
 .contact-links {
@@ -410,17 +569,86 @@ a:focus-visible {
 }
 
 .contact-links a {
-    padding: 8px 16px;
-    border: 1px solid var(--line);
+    padding: 8px 18px;
+    background: var(--card);
+    border: var(--line);
     border-radius: 999px;
-    font-size: 0.95rem;
+    box-shadow: 3px 3px 0 var(--ink);
+    font-weight: 700;
     text-decoration: none;
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .contact-links a:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--ink);
+    color: var(--blue);
+}
+
+/* ---------- Mascot animation ---------- */
+
+/* Parts of the inline elephant on the home page */
+.mascot .ear,
+.mascot .trunk,
+.mascot .eyes,
+.mascot .whole {
+    transform-box: view-box;
+}
+
+.mascot .ear-left  { transform-origin: 88px 100px; }
+.mascot .ear-right { transform-origin: 152px 100px; }
+.mascot .trunk     { transform-origin: 120px 118px; }
+.mascot .eyes      { transform-origin: 120px 96px; animation: blink 5s infinite; }
+.mascot .whole     { transform-origin: 120px 200px; }
+
+/* Gentle idle ear flap */
+.mascot .ear-left  { animation: flap-left 3.2s ease-in-out infinite; }
+.mascot .ear-right { animation: flap-right 3.2s ease-in-out infinite; }
+
+/* Hover: trunk waves hello */
+.mascot:hover .trunk {
+    animation: trunk-wave 0.9s ease-in-out infinite;
+}
+
+/* Click: a happy bounce with fast ear flaps */
+.mascot.happy .whole {
+    animation: bounce 0.7s ease;
+}
+
+.mascot.happy .ear-left  { animation: flap-left 0.25s ease-in-out 3; }
+.mascot.happy .ear-right { animation: flap-right 0.25s ease-in-out 3; }
+
+@keyframes flap-left {
+    0%, 100% { transform: rotate(0deg) scaleX(1); }
+    50%      { transform: rotate(-6deg) scaleX(0.9); }
+}
+
+@keyframes flap-right {
+    0%, 100% { transform: rotate(0deg) scaleX(1); }
+    50%      { transform: rotate(6deg) scaleX(0.9); }
+}
+
+@keyframes trunk-wave {
+    0%, 100% { transform: rotate(0deg); }
+    30%      { transform: rotate(-14deg); }
+    70%      { transform: rotate(10deg); }
+}
+
+@keyframes blink {
+    0%, 92%, 100% { transform: scaleY(1); }
+    95%           { transform: scaleY(0.1); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    35%      { transform: translateY(-18px) scale(1.04, 0.97); }
+    65%      { transform: translateY(0) scale(1.03, 0.96); }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25%      { transform: rotate(-10deg); }
+    75%      { transform: rotate(10deg); }
 }
 
 /* ---------- Phones ---------- */
@@ -430,17 +658,24 @@ a:focus-visible {
         --gutter: 16px;
     }
 
-    .site-nav {
-        gap: 16px;
+    .site-name span {
+        display: none;
     }
 
-    .intro {
-        padding-top: 56px;
-        padding-bottom: 48px;
+    .site-nav a {
+        padding: 4px 8px;
+    }
+
+    .bubble {
+        padding: 22px 20px;
+    }
+
+    .prose {
+        padding: 20px;
     }
 
     .page {
-        padding-top: 32px;
+        padding-top: 28px;
     }
 }
 
@@ -449,8 +684,10 @@ a:focus-visible {
         scroll-behavior: auto;
     }
 
-    .tile-media img,
-    .tile h3 {
-        transition: none;
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
     }
 }

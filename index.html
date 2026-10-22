@@ -7,14 +7,14 @@
     <meta name="description" content="Max Coe, engineering student at Tufts: projects and activities from EN1, Applications in Engineering.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;700&display=swap">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
     <header class="site-header">
         <div class="wrap">
-            <a class="site-name" href="./index.html">Max Coe</a>
+            <a class="site-name" href="./index.html"><img src="./images/jumbo.svg" alt="" width="40" height="35"><span>Max Coe</span></a>
             <nav class="site-nav">
                 <a href="./index.html#projects">Projects</a>
                 <a href="./index.html#activities">Activities</a>
@@ -25,9 +25,43 @@
 
     <main>
         <section class="wrap intro">
-            <h1>Max Coe</h1>
-            <p class="lede">Engineering student at Tufts.</p>
-            <p class="course">Projects and activities from EN1: Applications in Engineering, Fall 2026. Most are built with LEGO SPIKE Prime and programmed in Python.</p>
+            <button class="mascot" type="button" aria-label="Cartoon elephant mascot">
+                <svg viewBox="0 0 240 210" aria-hidden="true">
+                    <g class="whole">
+                        <g stroke="#3f4753" stroke-width="5" stroke-linejoin="round">
+                            <g class="ear ear-left">
+                                <ellipse cx="56" cy="104" rx="48" ry="54" fill="#a9b4c1"/>
+                                <ellipse cx="60" cy="108" rx="30" ry="36" fill="#f6b6c6" stroke="none"/>
+                            </g>
+                            <g class="ear ear-right">
+                                <ellipse cx="184" cy="104" rx="48" ry="54" fill="#a9b4c1"/>
+                                <ellipse cx="180" cy="108" rx="30" ry="36" fill="#f6b6c6" stroke="none"/>
+                            </g>
+                            <circle cx="120" cy="104" r="60" fill="#bcc6d2"/>
+                            <path d="M113 46 Q110 34 102 31 M120 45 Q120 32 121 27 M127 46 Q131 34 139 32" fill="none" stroke-width="4" stroke-linecap="round"/>
+                        </g>
+                        <ellipse cx="86" cy="124" rx="10" ry="6.5" fill="#f6a3b8" opacity="0.8"/>
+                        <ellipse cx="154" cy="124" rx="10" ry="6.5" fill="#f6a3b8" opacity="0.8"/>
+                        <g class="eyes">
+                            <ellipse cx="98" cy="96" rx="7" ry="9.5" fill="#1f2630"/>
+                            <ellipse cx="142" cy="96" rx="7" ry="9.5" fill="#1f2630"/>
+                            <circle cx="100.5" cy="92" r="2.6" fill="#fff"/>
+                            <circle cx="144.5" cy="92" r="2.6" fill="#fff"/>
+                        </g>
+                        <path d="M92 140 Q100 150 108 143" fill="none" stroke="#3f4753" stroke-width="4" stroke-linecap="round"/>
+                        <g class="trunk">
+                            <path d="M120 116 C120 148 116 168 130 181 C141 191 157 184 156 171" fill="none" stroke="#3f4753" stroke-width="30" stroke-linecap="round"/>
+                            <path d="M120 116 C120 148 116 168 130 181 C141 191 157 184 156 171" fill="none" stroke="#bcc6d2" stroke-width="20" stroke-linecap="round"/>
+                            <path d="M112 140 Q120 144 128 140 M112 155 Q120 159 128 154" fill="none" stroke="#3f4753" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <div class="bubble">
+                <h1>Hi, I&rsquo;m Max!</h1>
+                <p class="lede">Engineering student at Tufts.</p>
+                <p class="course">Projects and activities from EN1: Applications in Engineering, Fall 2026. Most are built with LEGO SPIKE Prime and programmed in Python.</p>
+            </div>
         </section>
 
         <section class="wrap work" id="projects">
@@ -37,7 +71,7 @@
             </div>
             <div class="grid">
                 <a class="tile" href="./project10.html">
-                    <figure class="tile-media"><span class="tile-placeholder" aria-hidden="true">P10</span></figure>
+                    <figure class="tile-media"><span class="tile-placeholder" aria-hidden="true"><span>P10</span></span></figure>
                     <p class="tile-meta">Project 10 &middot; Nov 2026</p>
                     <h3>Haunted House <span class="tag">In progress</span></h3>
                 </a>
@@ -47,7 +81,7 @@
                     <h3>Robotic Arm <span class="tag">In progress</span></h3>
                 </a>
                 <a class="tile" href="./project08.html">
-                    <figure class="tile-media"><span class="tile-placeholder" aria-hidden="true">P8</span></figure>
+                    <figure class="tile-media"><span class="tile-placeholder" aria-hidden="true"><span>P8</span></span></figure>
                     <p class="tile-meta">Project 8 &middot; Oct 2026</p>
                     <h3>Astronaut Tools <span class="tag">In progress</span></h3>
                 </a>
@@ -57,9 +91,9 @@
                     <h3>Draw a Square <span class="tag">In progress</span></h3>
                 </a>
                 <a class="tile" href="./project06.html">
-                    <figure class="tile-media"><span class="tile-placeholder" aria-hidden="true">P6</span></figure>
-                    <p class="tile-meta">Project 6 &middot; Oct 2026</p>
-                    <h3>Simple Car <span class="tag">In progress</span></h3>
+                    <figure class="tile-media"><img src="./images/activity05.jpg" alt="" loading="lazy" decoding="async"></figure>
+                    <p class="tile-meta">Project 6 + Activity 5 &middot; Oct 2026</p>
+                    <h3>Simple Car + Sensors <span class="tag">In progress</span></h3>
                 </a>
                 <a class="tile" href="./project05.html">
                     <figure class="tile-media"><img src="./images/project05.jpg" alt="" loading="lazy" decoding="async"></figure>
@@ -96,14 +130,9 @@
             </div>
             <div class="grid small">
                 <a class="tile" href="./activity06.html">
-                    <figure class="tile-media"><span class="tile-placeholder" aria-hidden="true">A6</span></figure>
+                    <figure class="tile-media"><span class="tile-placeholder" aria-hidden="true"><span>A6</span></span></figure>
                     <p class="tile-meta">Activity 6 &middot; Oct 2026</p>
                     <h3>Prepping for Haunted House <span class="tag">In progress</span></h3>
-                </a>
-                <a class="tile" href="./activity05.html">
-                    <figure class="tile-media"><img src="./images/activity05.jpg" alt="" loading="lazy" decoding="async"></figure>
-                    <p class="tile-meta">Activity 5 &middot; Oct 2026</p>
-                    <h3>Programming with Sensors <span class="tag">In progress</span></h3>
                 </a>
                 <a class="tile" href="./activity03.html">
                     <figure class="tile-media"><img src="./images/activity03.jpg" alt="" loading="lazy" decoding="async"></figure>
@@ -123,6 +152,16 @@
             </div>
         </section>
     </main>
+
+    <script>
+        // Click the elephant: it bounces and flaps its ears.
+        const mascot = document.querySelector('.mascot');
+        mascot.addEventListener('click', () => {
+            mascot.classList.remove('happy');
+            void mascot.offsetWidth; // restart the animation on repeat clicks
+            mascot.classList.add('happy');
+        });
+    </script>
 
     <footer class="site-footer" id="contact">
         <div class="wrap">
