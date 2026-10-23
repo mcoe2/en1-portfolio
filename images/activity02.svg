@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Cartoon of a giant blender sucking up a tornado while Jumbo the elephant watches">
+  <!-- Illustration of the redesign idea -->
+  <rect width="800" height="600" fill="#9fb4c8"/>
+  <path d="M0 60 q60 -30 120 0 q60 -30 120 0 q60 -30 120 0 q60 -30 120 0 v-60 h-480z" fill="#7d8fa3"/>
+  <rect y="500" width="800" height="100" fill="#6e8b5a"/>
+  <path d="M0 500 H800" stroke="#3b2a1f" stroke-width="6"/>
+  <!-- tornado funnel curving down into the open blender -->
+  <g stroke="#3b2a1f" stroke-width="6" fill="#c4ccd6">
+    <ellipse cx="605" cy="40" rx="170" ry="30"/>
+    <ellipse cx="620" cy="72" rx="138" ry="26" fill="#d6dce4"/>
+    <ellipse cx="642" cy="100" rx="108" ry="22"/>
+    <ellipse cx="626" cy="124" rx="80" ry="18" fill="#d6dce4"/>
+    <ellipse cx="642" cy="144" rx="58" ry="15"/>
+    <ellipse cx="632" cy="161" rx="40" ry="12" fill="#d6dce4"/>
+    <ellipse cx="636" cy="176" rx="26" ry="9"/>
+  </g>
+  <path d="M500 40 q100 18 200 0 M540 100 q90 14 180 -2" fill="none" stroke="#8a97a6" stroke-width="5" stroke-linecap="round"/>
+  <!-- debris -->
+  <g stroke="#3b2a1f" stroke-width="4" stroke-linejoin="round">
+    <path d="M400 120 l30 -10 6 20 -30 10z" fill="#e05a5a"/>
+    <path d="M450 190 l16 -16 16 16z" fill="#5b3f2c"/>
+    <ellipse cx="785" cy="150" rx="14" ry="8" fill="#3f9b5b" transform="rotate(30 785 150)"/>
+  </g>
+  <!-- blender -->
+  <g stroke="#3b2a1f" stroke-width="7" stroke-linejoin="round">
+    <path d="M510 170 h250 l-34 270 h-182z" fill="#cfe3f5" fill-opacity="0.8"/>
+    <path d="M760 220 h20 a24 24 0 0 1 24 24 v110 a24 24 0 0 1 -24 24 h-28" fill="none"/>
+    <path d="M530 440 h210 l20 70 h-250z" fill="#2a5f93"/>
+    <circle cx="590" cy="480" r="12" fill="#f2c94c"/>
+    <circle cx="635" cy="480" r="12" fill="#e05a5a"/>
+    <circle cx="680" cy="480" r="12" fill="#f6ead8"/>
+  </g>
+  <rect x="300" y="520" width="150" height="30" rx="8" fill="#2a5f93" stroke="#3b2a1f" stroke-width="6" transform="rotate(-8 375 535)"/>
+  <!-- swirl inside the jar -->
+  <path d="M635 400 c-60 -10 -60 -60 0 -60 c50 0 50 -50 0 -50 c-40 0 -40 -40 0 -40" fill="none" stroke="#8a97a6" stroke-width="12" stroke-linecap="round"/>
+  <path d="M600 430 l35 -14 35 14 -35 6z" fill="#8a97a6" stroke="#3b2a1f" stroke-width="5" stroke-linejoin="round"/>
+  <!-- Jumbo holding on -->
+  <g transform="translate(70 360) scale(0.62)">
+    <g stroke="#3b2a1f" stroke-width="7" stroke-linejoin="round">
+      <ellipse cx="56" cy="104" rx="48" ry="54" fill="#a9b4c1" transform="rotate(-14 56 104)"/>
+      <ellipse cx="60" cy="108" rx="30" ry="36" fill="#f6b6c6" stroke="none" transform="rotate(-14 56 104)"/>
+      <ellipse cx="184" cy="104" rx="48" ry="54" fill="#a9b4c1" transform="rotate(14 184 104)"/>
+      <ellipse cx="180" cy="108" rx="30" ry="36" fill="#f6b6c6" stroke="none" transform="rotate(14 184 104)"/>
+      <circle cx="120" cy="104" r="60" fill="#bcc6d2"/>
+    </g>
+    <circle cx="98" cy="96" r="12" fill="#fff" stroke="#1f2630" stroke-width="4"/><circle cx="98" cy="96" r="5" fill="#1f2630"/>
+    <circle cx="142" cy="96" r="12" fill="#fff" stroke="#1f2630" stroke-width="4"/><circle cx="142" cy="96" r="5" fill="#1f2630"/>
+    <ellipse cx="96" cy="146" rx="9" ry="12" fill="#3b2a1f"/>
+    <path d="M120 116 C120 148 116 168 130 181 C141 191 157 184 156 171" fill="none" stroke="#3b2a1f" stroke-width="30" stroke-linecap="round"/>
+    <path d="M120 116 C120 148 116 168 130 181 C141 191 157 184 156 171" fill="none" stroke="#bcc6d2" stroke-width="20" stroke-linecap="round"/>
+  </g>
+</svg>

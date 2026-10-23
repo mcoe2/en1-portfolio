@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Cartoon of a round drink coaster with a purple and green jester design and HA HA HA lettering, under a glass">
+  <!-- Illustration of the coaster idea -->
+  <rect width="800" height="600" fill="#c98a5a"/>
+  <path d="M0 90 Q200 70 400 95 T800 85 M0 230 Q220 210 420 236 T800 222 M0 520 Q200 500 400 528 T800 512" fill="none" stroke="#a96f45" stroke-width="6"/>
+  <!-- coaster -->
+  <circle cx="370" cy="320" r="225" fill="#9c6b41" opacity="0.35"/>
+  <circle cx="360" cy="306" r="220" fill="#e9d3b0" stroke="#3b2a1f" stroke-width="8"/>
+  <circle cx="360" cy="306" r="186" fill="none" stroke="#6b3fa0" stroke-width="8" stroke-dasharray="18 12"/>
+  <!-- jester hat -->
+  <g stroke="#3b2a1f" stroke-width="6" stroke-linejoin="round">
+    <path d="M270 330 Q250 230 200 200 Q280 210 310 270 Q330 170 360 140 Q390 170 410 270 Q440 210 520 200 Q470 230 450 330z" fill="#6b3fa0"/>
+    <path d="M310 270 Q330 170 360 140 Q390 170 410 270 Q380 300 360 330 Q340 300 310 270z" fill="#3f9b5b"/>
+    <rect x="262" y="320" width="196" height="40" rx="14" fill="#f2c94c"/>
+    <circle cx="200" cy="200" r="16" fill="#f2c94c"/>
+    <circle cx="360" cy="136" r="16" fill="#f2c94c"/>
+    <circle cx="520" cy="200" r="16" fill="#f2c94c"/>
+  </g>
+  <g fill="#3b2a1f"><circle cx="300" cy="340" r="6"/><circle cx="340" cy="340" r="6"/><circle cx="380" cy="340" r="6"/><circle cx="420" cy="340" r="6"/></g>
+  <text x="360" y="430" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="54" fill="#6b3fa0" stroke="#3b2a1f" stroke-width="2">HA HA HA</text>
+  <g font-family="Arial, sans-serif" font-size="34" text-anchor="middle">
+    <text x="200" y="300" fill="#3f9b5b">&#9827;</text>
+    <text x="520" y="300" fill="#e05a5a">&#9829;</text>
+    <text x="250" y="470" fill="#e05a5a">&#9830;</text>
+    <text x="470" y="470" fill="#3f9b5b">&#9824;</text>
+  </g>
+  <!-- glass of green drink -->
+  <g transform="translate(560 60)">
+    <path d="M10 0 h150 l-16 250 h-118z" fill="#cfe3f5" fill-opacity="0.75" stroke="#3b2a1f" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M20 80 h130 l-11 166 h-108z" fill="#5fbf6f" fill-opacity="0.85"/>
+    <path d="M120 -40 l-20 200" stroke="#e05a5a" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="60" cy="140" r="8" fill="#fff" opacity="0.7"/><circle cx="90" cy="190" r="6" fill="#fff" opacity="0.7"/>
+  </g>
+</svg>
