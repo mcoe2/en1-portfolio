@@ -7,8 +7,9 @@
     <meta name="description" content="Max Coe, engineering student at Tufts: projects and activities from EN1, Applications in Engineering.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/jumbo.svg" type="image/svg+xml">
 </head>
 <body>
 
@@ -26,49 +27,23 @@
 
     <main>
         <section class="wrap intro">
-            <button class="mascot" type="button" aria-label="Chat with Jumbo the elephant">
-                <svg viewBox="0 0 240 210" aria-hidden="true">
-                    <g class="whole">
-                        <g stroke="#3f4753" stroke-width="5" stroke-linejoin="round">
-                            <g class="ear ear-left">
-                                <ellipse cx="56" cy="104" rx="48" ry="54" fill="#a9b4c1"/>
-                                <ellipse cx="60" cy="108" rx="30" ry="36" fill="#f6b6c6" stroke="none"/>
-                            </g>
-                            <g class="ear ear-right">
-                                <ellipse cx="184" cy="104" rx="48" ry="54" fill="#a9b4c1"/>
-                                <ellipse cx="180" cy="108" rx="30" ry="36" fill="#f6b6c6" stroke="none"/>
-                            </g>
-                            <circle cx="120" cy="104" r="60" fill="#bcc6d2"/>
-                            <path d="M113 46 Q110 34 102 31 M120 45 Q120 32 121 27 M127 46 Q131 34 139 32" fill="none" stroke-width="4" stroke-linecap="round"/>
-                        </g>
-                        <ellipse cx="86" cy="124" rx="10" ry="6.5" fill="#f6a3b8" opacity="0.8"/>
-                        <ellipse cx="154" cy="124" rx="10" ry="6.5" fill="#f6a3b8" opacity="0.8"/>
-                        <g class="eyes">
-                            <ellipse cx="98" cy="96" rx="7" ry="9.5" fill="#1f2630"/>
-                            <ellipse cx="142" cy="96" rx="7" ry="9.5" fill="#1f2630"/>
-                            <circle cx="100.5" cy="92" r="2.6" fill="#fff"/>
-                            <circle cx="144.5" cy="92" r="2.6" fill="#fff"/>
-                        </g>
-                        <path d="M92 140 Q100 150 108 143" fill="none" stroke="#3f4753" stroke-width="4" stroke-linecap="round"/>
-                        <g class="trunk">
-                            <path d="M120 116 C120 148 116 168 130 181 C141 191 157 184 156 171" fill="none" stroke="#3f4753" stroke-width="30" stroke-linecap="round"/>
-                            <path d="M120 116 C120 148 116 168 130 181 C141 191 157 184 156 171" fill="none" stroke="#bcc6d2" stroke-width="20" stroke-linecap="round"/>
-                            <path d="M112 140 Q120 144 128 140 M112 155 Q120 159 128 154" fill="none" stroke="#3f4753" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
-                        </g>
-                    </g>
-                </svg>
-            </button>
-            <div class="bubble">
-                <h1>Hi, I&rsquo;m Max!</h1>
-                <p class="lede">Engineering student at Tufts.</p>
-                <p class="course">Here&rsquo;s my ultimate frisbee game, UltiMax, plus projects and activities from EN1: Applications in Engineering, Fall 2026, most built with LEGO SPIKE Prime and programmed in Python.</p>
+            <p class="eyebrow">Mechanical Engineering + Computer Science &middot; Tufts University</p>
+            <h1>Max Coe</h1>
+            <p class="lede">I design, build and program things: LEGO SPIKE Prime robots in Tufts&rsquo; EN1 course, and UltiMax, an ultimate frisbee game I&rsquo;m making in Godot.</p>
+            <ul class="highlights">
+                <li><strong>Gold medal</strong> 2026 U-20 World Ultimate Championships, Team USA</li>
+                <li><strong>Boston Glory</strong> Professional ultimate player, UFA</li>
+                <li><strong>Engineering intern</strong> Town of Bedford, summer 2025</li>
+            </ul>
+            <div class="cta">
+                <a class="btn primary" href="#projects">View projects</a>
+                <a class="btn" href="./resume.html">R&eacute;sum&eacute;</a>
             </div>
         </section>
 
         <section class="wrap work" id="side-projects">
             <div class="section-head">
-                <h2>Side project</h2>
-                <span>Made for fun</span>
+                <h2>Featured</h2>
             </div>
             <a class="tile feature" href="./ultimax.html">
                 <figure class="tile-media"><img src="./images/ultimax.jpg" alt="" loading="lazy" decoding="async"></figure>
@@ -84,6 +59,7 @@
         <section class="wrap work" id="projects">
             <div class="section-head">
                 <h2>EN1 Projects</h2>
+                <p class="section-sub">Applications in Engineering, Fall 2026</p>
                 <div class="shelf-controls">
                     <div class="view-toggle" role="group" aria-label="Layout">
                         <button type="button" data-set-view="scroll" aria-pressed="true">Scroll</button>
@@ -151,7 +127,8 @@
 
         <section class="wrap work" id="activities">
             <div class="section-head">
-                <h2>Activities</h2>
+                <h2>EN1 Activities</h2>
+                <p class="section-sub">Shorter in-class challenges</p>
                 <div class="shelf-controls">
                     <div class="view-toggle" role="group" aria-label="Layout">
                         <button type="button" data-set-view="scroll" aria-pressed="true">Scroll</button>
@@ -189,7 +166,6 @@
     </main>
 
     <script>
-        // Click the elephant: it bounces and flaps its ears.
         // Scroll / Grid switch. Scroll is the default; the choice is remembered in this browser.
         function setView(view) {
             if (view === 'grid') {
@@ -223,13 +199,6 @@
             });
         });
 
-        const mascot = document.querySelector('.mascot');
-        mascot.addEventListener('click', () => {
-            mascot.classList.remove('happy');
-            void mascot.offsetWidth; // restart the animation on repeat clicks
-            mascot.classList.add('happy');
-            if (window.openElephantChat) window.openElephantChat();
-        });
     </script>
 
     <footer class="site-footer" id="contact">

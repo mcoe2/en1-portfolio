@@ -9,11 +9,11 @@
     const TOPICS = [
         {
             words: ['hi', 'hello', 'hey', 'yo', 'sup', 'howdy', 'hiya'],
-            reply: 'Hi there! I&rsquo;m Jumbo, Max&rsquo;s elephant sidekick. Ask me about his projects, his game UltiMax, his r&eacute;sum&eacute;, or this website.'
+            reply: 'Hi there! I&rsquo;m Jumbo, this site&rsquo;s guide. Ask me about his projects, his game UltiMax, his r&eacute;sum&eacute;, or this website.'
         },
         {
             words: ['jumbo', 'elephant', 'your name', 'who are you', 'mascot'],
-            reply: 'I&rsquo;m Jumbo! I&rsquo;m named after Tufts&rsquo; mascot, Jumbo the elephant. I&rsquo;m drawn in code (SVG), so I can flap my ears and wave my trunk. Try hovering over me on the home page.'
+            reply: 'I&rsquo;m Jumbo, this site&rsquo;s guide, named after Tufts&rsquo; mascot, Jumbo the elephant. I can point you to Max&rsquo;s projects, r&eacute;sum&eacute; and contact info.'
         },
         {
             words: ['who is max', 'about max', 'max', 'about him', 'student', 'major', 'tufts', 'study', 'studies', 'year'],
@@ -49,11 +49,11 @@
         },
         {
             words: ['best', 'favorite', 'favourite', 'coolest', 'recommend', 'look at first', 'start with', 'one thing', 'impressive'],
-            reply: 'If you only look at one thing, try <a href="./ultimax.html">UltiMax</a>, Max&rsquo;s ultimate frisbee game. From EN1, the <a href="./project09.html">Robotic Arm</a> and <a href="./project03.html">Biomimicry</a> (a LEGO elephant trunk, my personal favorite) have great videos.'
+            reply: 'If you only look at one thing, try <a href="./ultimax.html">UltiMax</a>, Max&rsquo;s ultimate frisbee game. From EN1, the <a href="./project09.html">Robotic Arm</a> and <a href="./project03.html">Biomimicry</a> (a motorized LEGO elephant trunk) have great videos.'
         },
         {
             words: ['website', 'site', 'built', 'made', 'make', 'html', 'css', 'github pages', 'design', 'how was'],
-            reply: 'This site is plain HTML, CSS and a little JavaScript, hosted free on GitHub Pages. No frameworks! The tan-and-blue cartoon look is a nod to me, Jumbo. Even this chat is just a list of answers in a file called chat.js.'
+            reply: 'This site is plain HTML, CSS and a little JavaScript, hosted free on GitHub Pages. No frameworks. The brown and blue colors and the elephant logo are a nod to Tufts&rsquo; mascot, Jumbo. This chat is a scripted list of answers in a file called chat.js.'
         },
         {
             words: ['scroll', 'grid', 'view', 'layout', 'toggle', 'navigate', 'find', 'arrows'],
@@ -77,7 +77,7 @@
         { words: ['top', 'spinning', 'spinner', 'gear', 'gears'],
           reply: 'For the <a href="./project04.html">Top Spinner</a>, Max used gear ratios to control how fast a spinning top spins.' },
         { words: ['biomimicry', 'trunk', 'nature', 'animal'],
-          reply: 'My favorite! For <a href="./project03.html">Biomimicry</a>, Max built a motorized LEGO elephant trunk that curls around a branch, just like mine.' },
+          reply: 'For <a href="./project03.html">Biomimicry</a>, Max built a motorized LEGO elephant trunk that curls around a branch.' },
         { words: ['silly', 'walk', 'walks', 'walking', 'legs'],
           reply: 'In <a href="./project02.html">Silly Walks</a>, Max built a robot with big legs and grippers to walk as far as possible.' },
         { words: ['getting to know', 'introduce', 'first project'],
@@ -94,7 +94,7 @@
           reply: 'For <a href="./activity02.html">Object Redesign</a>, Max reimagined a blender as a machine for stopping tornadoes.' },
         {
             words: ['thanks', 'thank you', 'thx', 'cool', 'awesome', 'nice', 'great'],
-            reply: 'Happy to help! *happy trumpet noise* 🎺'
+            reply: 'Happy to help! Anything else you&rsquo;d like to know?'
         },
         {
             words: ['bye', 'goodbye', 'see ya', 'later', 'cya'],
@@ -102,7 +102,7 @@
         }
     ];
 
-    const FALLBACK = 'Hmm, my big ears didn&rsquo;t quite catch that. I know about Max, his projects, UltiMax, his r&eacute;sum&eacute;, and this website. Try one of the buttons below!';
+    const FALLBACK = 'Sorry, I don&rsquo;t have an answer for that one. I know about Max, his projects, UltiMax, his r&eacute;sum&eacute;, and this website. Try one of the buttons below!';
 
     const SUGGESTIONS = [
         'Who is Max?',
@@ -155,7 +155,7 @@
     panel.innerHTML =
         '<header class="chat-head">' +
             '<img src="./images/jumbo.svg" alt="">' +
-            '<div><strong>Jumbo</strong><span>Max&rsquo;s elephant sidekick</span></div>' +
+            '<div><strong>Jumbo</strong><span>Ask about Max&rsquo;s work</span></div>' +
             '<button type="button" class="chat-close" aria-label="Close chat">&times;</button>' +
         '</header>' +
         '<div class="chat-log" aria-live="polite"></div>' +
@@ -219,7 +219,7 @@
         document.documentElement.classList.add('chat-open');
         if (!greeted) {
             greeted = true;
-            botSays('Hi, I&rsquo;m Jumbo! 🐘 Ask me anything about Max, his projects or this website, or tap a question below.');
+            botSays('Hi, I&rsquo;m Jumbo. Ask me about Max, his projects or this website, or pick a question below.');
         }
         input.focus();
     }
