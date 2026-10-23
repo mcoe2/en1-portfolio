@@ -82,6 +82,8 @@
           reply: 'In <a href="./project02.html">Silly Walks</a>, Max built a robot with big legs and grippers to walk as far as possible.' },
         { words: ['getting to know', 'introduce', 'first project'],
           reply: 'For <a href="./project01.html">Getting to Know You</a>, Max built a LEGO ultimate frisbee display to introduce himself.' },
+        { words: ['hub to hub', 'hub', 'hubs', 'sender', 'receiver', 'distance sensor', 'prepping'],
+          reply: 'For <a href="./activity06.html">Prepping for Haunted House</a>, Max got two SPIKE hubs talking: a sender hub with a distance sensor tells a receiver hub to spin its motor.' },
         { words: ['haunted', 'halloween', 'spooky', 'scary'],
           reply: 'Max&rsquo;s group is building an exhibit for the EN1 <a href="./project10.html">Haunted House</a> in the Nolop Makerspace on October 30th. Stay tuned!' },
         { words: ['coaster', 'joker'],
