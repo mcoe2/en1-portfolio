@@ -83,9 +83,18 @@
         <section class="wrap work" id="projects">
             <div class="section-head">
                 <h2>EN1 Projects</h2>
-                <span>Newest first</span>
+                <div class="shelf-controls">
+                    <div class="view-toggle" role="group" aria-label="Layout">
+                        <button type="button" data-set-view="scroll" aria-pressed="true">Scroll</button>
+                        <button type="button" data-set-view="grid" aria-pressed="false">Grid</button>
+                    </div>
+                    <div class="shelf-arrows">
+                        <button type="button" class="arrow" data-dir="-1" aria-label="Scroll left">&larr;</button>
+                        <button type="button" class="arrow" data-dir="1" aria-label="Scroll right">&rarr;</button>
+                    </div>
+                </div>
             </div>
-            <div class="grid">
+            <div class="grid shelf">
                 <a class="tile" href="./project10.html">
                     <figure class="tile-media"><span class="tile-placeholder" aria-hidden="true"><span>P10</span></span></figure>
                     <p class="tile-meta">Project 10 &middot; Nov 2026</p>
@@ -142,9 +151,18 @@
         <section class="wrap work" id="activities">
             <div class="section-head">
                 <h2>Activities</h2>
-                <span>In-class challenges</span>
+                <div class="shelf-controls">
+                    <div class="view-toggle" role="group" aria-label="Layout">
+                        <button type="button" data-set-view="scroll" aria-pressed="true">Scroll</button>
+                        <button type="button" data-set-view="grid" aria-pressed="false">Grid</button>
+                    </div>
+                    <div class="shelf-arrows">
+                        <button type="button" class="arrow" data-dir="-1" aria-label="Scroll left">&larr;</button>
+                        <button type="button" class="arrow" data-dir="1" aria-label="Scroll right">&rarr;</button>
+                    </div>
+                </div>
             </div>
-            <div class="grid small">
+            <div class="grid small shelf">
                 <a class="tile" href="./activity06.html">
                     <figure class="tile-media"><span class="tile-placeholder" aria-hidden="true"><span>A6</span></span></figure>
                     <p class="tile-meta">Activity 6 &middot; Oct 2026</p>
@@ -171,6 +189,39 @@
 
     <script>
         // Click the elephant: it bounces and flaps its ears.
+        // Scroll / Grid switch. Scroll is the default; the choice is remembered in this browser.
+        function setView(view) {
+            if (view === 'grid') {
+                document.documentElement.dataset.view = 'grid';
+            } else {
+                delete document.documentElement.dataset.view;
+            }
+            document.querySelectorAll('[data-set-view]').forEach((button) => {
+                button.setAttribute('aria-pressed', String(button.dataset.setView === (view === 'grid' ? 'grid' : 'scroll')));
+            });
+        }
+
+        let savedView = null;
+        try { savedView = localStorage.getItem('portfolio-view'); } catch (e) {}
+        setView(savedView);
+
+        document.querySelectorAll('[data-set-view]').forEach((button) => {
+            button.addEventListener('click', () => {
+                setView(button.dataset.setView);
+                try { localStorage.setItem('portfolio-view', button.dataset.setView); } catch (e) {}
+            });
+        });
+
+        // Arrow buttons scroll their row by about one card
+        document.querySelectorAll('.arrow').forEach((arrow) => {
+            arrow.addEventListener('click', () => {
+                const shelf = arrow.closest('.work').querySelector('.shelf');
+                const card = shelf.querySelector('.tile');
+                const step = card ? card.offsetWidth + 24 : shelf.clientWidth * 0.8;
+                shelf.scrollBy({ left: step * Number(arrow.dataset.dir), behavior: 'smooth' });
+            });
+        });
+
         const mascot = document.querySelector('.mascot');
         mascot.addEventListener('click', () => {
             mascot.classList.remove('happy');

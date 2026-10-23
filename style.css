@@ -753,3 +753,110 @@ h3 {
         margin: 0;
     }
 }
+
+/* ---------- Scroll view (default) and grid view for the EN1 sections ---------- */
+
+.shelf-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.view-toggle {
+    display: flex;
+    padding: 3px;
+    background: var(--card);
+    border: var(--line);
+    border-radius: 999px;
+}
+
+.view-toggle button,
+.arrow {
+    font: inherit;
+    font-weight: 700;
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.view-toggle button {
+    padding: 4px 14px;
+    background: none;
+    border: 0;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+.view-toggle button[aria-pressed="true"] {
+    background: var(--brown);
+    color: var(--cream);
+}
+
+.shelf-arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+    background: var(--card);
+    border: var(--line);
+    border-radius: 50%;
+    box-shadow: 3px 3px 0 var(--ink);
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.arrow:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--ink);
+}
+
+.arrow:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 var(--ink);
+}
+
+/* Scroll view: one row of cards you swipe or scroll sideways */
+html:not([data-view="grid"]) .shelf {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 6px;
+    /* room so the outlines, shadows and hover lift aren't cut off */
+    padding: 8px 12px 20px 6px;
+    margin: -8px -12px 0 -6px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--brown) transparent;
+}
+
+html:not([data-view="grid"]) .shelf > .tile {
+    flex: 0 0 min(80%, 360px);
+    scroll-snap-align: start;
+}
+
+html:not([data-view="grid"]) .shelf.small > .tile {
+    flex-basis: min(70%, 290px);
+}
+
+/* Arrows only make sense in scroll view */
+html[data-view="grid"] .shelf-arrows {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .section-head {
+        flex-wrap: wrap;
+    }
+
+    .shelf-arrows {
+        display: none;
+    }
+}
+
+/* Keep section headings clear of the sticky header when jumping to them */
+.work {
+    scroll-margin-top: 84px;
+}
