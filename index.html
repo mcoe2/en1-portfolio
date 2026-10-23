@@ -18,6 +18,7 @@
             <nav class="site-nav">
                 <a href="./index.html#projects">Projects</a>
                 <a href="./index.html#activities">Activities</a>
+                <a href="./resume.html">Résumé</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -25,7 +26,7 @@
 
     <main>
         <section class="wrap intro">
-            <button class="mascot" type="button" aria-label="Cartoon elephant mascot">
+            <button class="mascot" type="button" aria-label="Chat with Jumbo the elephant">
                 <svg viewBox="0 0 240 210" aria-hidden="true">
                     <g class="whole">
                         <g stroke="#3f4753" stroke-width="5" stroke-linejoin="round">
@@ -227,6 +228,7 @@
             mascot.classList.remove('happy');
             void mascot.offsetWidth; // restart the animation on repeat clicks
             mascot.classList.add('happy');
+            if (window.openElephantChat) window.openElephantChat();
         });
     </script>
 
@@ -241,6 +243,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="./chat.js" defer></script>
 
 </body>
 </html>
