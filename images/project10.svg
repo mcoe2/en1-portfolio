@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Cartoon of a haunted house at night with Jumbo the elephant dressed as a ghost">
+  <!-- Illustration, not a photo of the real exhibit -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e1a3d"/>
+      <stop offset="1" stop-color="#4a3a6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <g fill="#f6ead8"><circle cx="80" cy="60" r="3"/><circle cx="210" cy="110" r="2.5"/><circle cx="330" cy="50" r="3"/><circle cx="470" cy="90" r="2.5"/><circle cx="760" cy="230" r="3"/><circle cx="40" cy="220" r="2.5"/></g>
+  <!-- moon -->
+  <circle cx="650" cy="120" r="66" fill="#f6ead8" stroke="#3b2a1f" stroke-width="6"/>
+  <circle cx="628" cy="100" r="12" fill="#e7d5b8"/><circle cx="672" cy="140" r="9" fill="#e7d5b8"/>
+  <!-- bats -->
+  <path d="M500 150 q14 -18 28 0 q8 -10 14 -2 q6 -8 14 2 q14 -18 28 0 q-20 4 -28 18 q-6 -8 -14 -8 q-8 0 -14 8 q-8 -14 -28 -18z" fill="#2a2440" stroke="#3b2a1f" stroke-width="3"/>
+  <path d="M420 70 q10 -12 20 0 q5 -7 10 -1 q5 -6 10 1 q10 -12 20 0 q-14 3 -20 12 q-5 -5 -10 -5 q-5 0 -10 5 q-6 -9 -20 -12z" fill="#2a2440"/>
+  <!-- hill -->
+  <path d="M0 520 Q200 470 400 505 T800 500 V600 H0z" fill="#3b2a1f"/>
+  <!-- house -->
+  <rect x="250" y="270" width="290" height="250" fill="#5b3f2c" stroke="#3b2a1f" stroke-width="6"/>
+  <path d="M220 285 L395 140 L570 285z" fill="#3b2a1f" stroke="#3b2a1f" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="470" y="160" width="40" height="80" fill="#5b3f2c" stroke="#3b2a1f" stroke-width="6"/>
+  <g stroke="#3b2a1f" stroke-width="6">
+    <rect x="285" y="310" width="70" height="70" rx="6" fill="#f2c94c"/>
+    <rect x="435" y="310" width="70" height="70" rx="6" fill="#f2c94c"/>
+    <path d="M320 310 v70 M285 345 h70 M470 310 v70 M435 345 h70" fill="none" stroke-width="5"/>
+    <path d="M360 520 v-80 a35 35 0 0 1 70 0 v80z" fill="#2a1d14"/>
+    <circle cx="395" cy="225" r="26" fill="#f2c94c"/>
+  </g>
+  <path d="M380 215 l8 8 m0 -8 l-8 8 M402 215 l8 8 m0 -8 l-8 8" stroke="#3b2a1f" stroke-width="4" stroke-linecap="round"/>
+  <!-- pumpkin -->
+  <g transform="translate(620 470)">
+    <ellipse cx="0" cy="20" rx="56" ry="44" fill="#ee8a2b" stroke="#3b2a1f" stroke-width="6"/>
+    <path d="M-18 -22 v-14 q6 -6 14 0" fill="none" stroke="#3b6b3b" stroke-width="8" stroke-linecap="round"/>
+    <path d="M-28 6 l10 -12 10 12z M8 6 l10 -12 10 12z" fill="#3b2a1f"/>
+    <path d="M-26 32 q26 18 52 0 l-8 8 -8 -6 -8 8 -8 -8 -8 6z" fill="#3b2a1f"/>
+  </g>
+  <!-- Jumbo the ghost -->
+  <g transform="translate(40 230)">
+    <g stroke="#3b2a1f" stroke-width="6" stroke-linejoin="round">
+      <ellipse cx="38" cy="96" rx="40" ry="46" fill="#fffaf0"/>
+      <ellipse cx="162" cy="96" rx="40" ry="46" fill="#fffaf0"/>
+      <path d="M50 100 a50 50 0 0 1 100 0 v120 q-12 18 -25 0 q-12 18 -25 0 q-12 18 -25 0 q-12 18 -25 0z" fill="#fffaf0"/>
+    </g>
+    <ellipse cx="82" cy="96" rx="9" ry="13" fill="#3b2a1f"/>
+    <ellipse cx="118" cy="96" rx="9" ry="13" fill="#3b2a1f"/>
+    <path d="M100 118 C100 150 96 162 108 172 C118 180 130 172 128 160" fill="none" stroke="#3b2a1f" stroke-width="22" stroke-linecap="round"/>
+    <path d="M100 118 C100 150 96 162 108 172 C118 180 130 172 128 160" fill="none" stroke="#fffaf0" stroke-width="12" stroke-linecap="round"/>
+    <ellipse cx="72" cy="128" rx="8" ry="5" fill="#f6b6c6"/><ellipse cx="128" cy="128" rx="8" ry="5" fill="#f6b6c6"/>
+  </g>
+  <path d="M235 270 q14 -8 22 4 M245 300 q14 -8 22 4" fill="none" stroke="#f6ead8" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+</svg>

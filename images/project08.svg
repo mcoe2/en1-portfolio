@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Cartoon of Jumbo the elephant in a space helmet next to a floating nut and bolt">
+  <!-- Illustration, not a photo of the real tool -->
+  <rect width="800" height="600" fill="#1c3553"/>
+  <g fill="#f6ead8">
+    <circle cx="70" cy="70" r="4"/><circle cx="160" cy="140" r="3"/><circle cx="90" cy="300" r="3"/>
+    <circle cx="250" cy="60" r="5"/><circle cx="560" cy="60" r="4"/><circle cx="720" cy="110" r="3"/>
+    <circle cx="760" cy="300" r="4"/><circle cx="620" cy="330" r="3"/><circle cx="60" cy="480" r="4"/>
+    <circle cx="180" cy="560" r="3"/><circle cx="470" cy="40" r="3"/><circle cx="700" cy="40" r="2.5"/>
+  </g>
+  <path d="M120 200 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6z" fill="#f2c94c"/>
+  <path d="M700 230 l5 11 11 5 -11 5 -5 11 -5 -11 -11 -5 11 -5z" fill="#f2c94c"/>
+  <!-- planet -->
+  <circle cx="690" cy="540" r="130" fill="#c98a5a" stroke="#3b2a1f" stroke-width="6"/>
+  <circle cx="640" cy="500" r="22" fill="#a96f45"/>
+  <circle cx="730" cy="470" r="14" fill="#a96f45"/>
+  <ellipse cx="690" cy="540" rx="200" ry="40" fill="none" stroke="#f6ead8" stroke-width="10" transform="rotate(-14 690 540)"/>
+  <!-- suit collar -->
+  <rect x="230" y="455" width="260" height="80" rx="34" fill="#e4eef7" stroke="#3b2a1f" stroke-width="6"/>
+  <circle cx="300" cy="495" r="10" fill="#2a5f93"/><circle cx="420" cy="495" r="10" fill="#e05a5a"/>
+  <!-- Jumbo -->
+  <g transform="translate(240 186)">
+    <g stroke="#3b2a1f" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+      <ellipse cx="56" cy="104" rx="48" ry="54" fill="#a9b4c1"/>
+      <ellipse cx="60" cy="108" rx="30" ry="36" fill="#f6b6c6" stroke="none"/>
+      <ellipse cx="184" cy="104" rx="48" ry="54" fill="#a9b4c1"/>
+      <ellipse cx="180" cy="108" rx="30" ry="36" fill="#f6b6c6" stroke="none"/>
+      <circle cx="120" cy="104" r="60" fill="#bcc6d2"/>
+      <path d="M113 46 Q110 34 102 31 M120 45 Q120 32 121 27 M127 46 Q131 34 139 32" fill="none" stroke-width="4"/>
+    </g>
+    <ellipse cx="86" cy="124" rx="10" ry="6.5" fill="#f6a3b8"/>
+    <ellipse cx="154" cy="124" rx="10" ry="6.5" fill="#f6a3b8"/>
+    <ellipse cx="98" cy="96" rx="7" ry="9.5" fill="#1f2630"/>
+    <ellipse cx="142" cy="96" rx="7" ry="9.5" fill="#1f2630"/>
+    <circle cx="100.5" cy="92" r="2.6" fill="#fff"/><circle cx="144.5" cy="92" r="2.6" fill="#fff"/>
+    <path d="M120 116 C120 148 116 168 130 181 C141 191 157 184 156 171" fill="none" stroke="#3b2a1f" stroke-width="30" stroke-linecap="round"/>
+    <path d="M120 116 C120 148 116 168 130 181 C141 191 157 184 156 171" fill="none" stroke="#bcc6d2" stroke-width="20" stroke-linecap="round"/>
+  </g>
+  <!-- helmet -->
+  <circle cx="360" cy="300" r="192" fill="#cfe3f5" fill-opacity="0.22" stroke="#3b2a1f" stroke-width="8"/>
+  <path d="M230 210 A160 160 0 0 1 330 130" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity="0.7"/>
+  <!-- floating bolt and nut -->
+  <g transform="rotate(18 640 220)">
+    <rect x="622" y="120" width="36" height="170" rx="6" fill="#9aa7b4" stroke="#3b2a1f" stroke-width="6"/>
+    <rect x="600" y="104" width="80" height="34" rx="8" fill="#9aa7b4" stroke="#3b2a1f" stroke-width="6"/>
+    <path d="M626 170 h28 M626 190 h28 M626 250 h28 M626 270 h28" stroke="#3b2a1f" stroke-width="4" stroke-linecap="round"/>
+    <polygon points="640,180 680,203 680,247 640,270 600,247 600,203" fill="#f2c94c" stroke="#3b2a1f" stroke-width="6" stroke-linejoin="round"/>
+    <circle cx="640" cy="225" r="16" fill="#1c3553" stroke="#3b2a1f" stroke-width="5"/>
+  </g>
+  <path d="M570 330 q-20 10 -40 0 M585 360 q-20 10 -40 0" fill="none" stroke="#f6ead8" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+</svg>
