@@ -697,3 +697,59 @@ h3 {
         transition: none !important;
     }
 }
+
+/* ---------- Featured side project (wide card) ---------- */
+
+.tile.feature {
+    display: grid;
+    gap: 6px;
+}
+
+.tile.feature .tile-media {
+    aspect-ratio: 16 / 9;
+}
+
+.feature-text {
+    padding: 0 6px;
+}
+
+.feature-text .tile-meta,
+.feature-text h3 {
+    padding: 0;
+}
+
+.tile.feature h3 {
+    font-size: 2rem;
+}
+
+.feature-blurb {
+    margin: 8px 0 14px;
+    max-width: 46ch;
+}
+
+.feature-cta {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--blue);
+    color: var(--cream);
+    border: var(--line);
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.tile.feature:hover {
+    transform: translate(-3px, -3px);
+}
+
+@media (min-width: 760px) {
+    .tile.feature {
+        grid-template-columns: 3fr 2fr;
+        align-items: center;
+        gap: 28px;
+        padding: 14px 28px 14px 14px;
+    }
+
+    .tile.feature .tile-media {
+        margin: 0;
+    }
+}
