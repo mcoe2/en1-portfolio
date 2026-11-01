@@ -65,7 +65,7 @@
         },
         // Individual projects
         { words: ['arm', 'robotic arm', 'ping pong', 'ball'],
-          reply: 'For the <a href="./project09.html">Robotic Arm</a>, Max built an arm that picks up a ping-pong ball and passes it down a line of classmates&rsquo; arms.' },
+          reply: 'For the <a href="./project09.html">Robotic Arm</a>, Max built a ramp with spinning LEGO pieces that knock a ping-pong ball along to pass it down a line of classmates&rsquo; builds.' },
         { words: ['square', 'draw a square', 'drawing robot'],
           reply: 'In <a href="./project07.html">Draw a Square</a>, Max&rsquo;s robot had one shot to draw a square between two target squares, and it checked off everything on the rubric.' },
         { words: ['astronaut', 'space', 'nut', 'bolt', 'washer', 'glove', 'gloves'],
