@@ -85,7 +85,7 @@
         { words: ['hub to hub', 'hub', 'hubs', 'sender', 'receiver', 'distance sensor', 'prepping'],
           reply: 'For <a href="./activity06.html">Prepping for Haunted House</a>, Max got two SPIKE hubs talking: a sender hub with a distance sensor tells a receiver hub to spin its motor.' },
         { words: ['haunted', 'halloween', 'spooky', 'scary'],
-          reply: 'Max&rsquo;s group is building an exhibit for the EN1 <a href="./project10.html">Haunted House</a> in the Nolop Makerspace on October 30th. Stay tuned!' },
+          reply: 'For the EN1 <a href="./project10.html">Haunted House</a>, Max&rsquo;s group built a crying baby that gets louder as you walk up. One distance sensor controls the sound, a turning head, and a little robot car.' },
         { words: ['coaster', 'joker'],
           reply: 'For <a href="./activity01.html">Design a Coaster</a>, Max designed a drink coaster for an unusual client: the Joker.' },
         { words: ['airplane', 'plane', 'paper'],

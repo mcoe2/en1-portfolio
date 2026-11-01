@@ -611,6 +611,24 @@ html[data-view="grid"] .shelf-arrows {
     margin-bottom: 0;
 }
 
+.prose ul {
+    margin: 0 0 1.1em;
+    padding-left: 1.3em;
+}
+
+.prose ul:last-child {
+    margin-bottom: 0;
+}
+
+.prose li + li {
+    margin-top: 0.4em;
+}
+
+.prose code {
+    font-family: var(--mono);
+    font-size: 0.9em;
+}
+
 .page h2 {
     margin: 48px 0 16px;
     font-size: 1.4rem;
