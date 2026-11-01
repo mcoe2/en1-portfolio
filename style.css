@@ -594,6 +594,10 @@ html[data-view="grid"] .shelf-arrows {
     object-fit: cover;
 }
 
+.media.crop.wide img {
+    aspect-ratio: 16 / 9;
+}
+
 /* Vertical (phone-portrait) video */
 .media.video.portrait {
     aspect-ratio: 9 / 16;
