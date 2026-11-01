@@ -30,8 +30,8 @@
         <p class="page-meta">Project 10 &middot; November 2026</p>
         <h1>Haunted House</h1>
 
-        <figure class="media">
-            <img src="./images/project10.jpg" alt="Our crying baby exhibit set up in the dark: a black box holding the baby head, draped in black cloth and fake cobwebs, with candles, a skeleton, and the spider car at the bottom">
+        <figure class="media crop">
+            <img src="./images/project10.jpg" style="object-position: 50% 30%" alt="Our crying baby exhibit set up in the dark: a black box holding the baby head, draped in black cloth and fake cobwebs, with candles, a skeleton, and the spider car at the bottom">
         </figure>
 
         <div class="prose">
@@ -81,9 +81,11 @@
             <p>The wheel encoders get zeroed when the program starts, so the car has to be sitting at its starting end of the track before you hit run. If the car stops hearing from the sender for more than one second, it stops its motors.</p>
         </div>
 
-        <h2>Sender code (baby_sender)</h2>
+        <h2>Code</h2>
 
-        <div class="code">
+        <details class="code-toggle">
+            <summary>Sender hub (baby_sender)</summary>
+            <div class="code">
             <pre><code>from hub import port
 import distance_sensor
 import motor
@@ -203,11 +205,11 @@ try:
 
 finally:
     motor.stop(port.E)</code></pre>
-        </div>
-
-        <h2>Receiver code (car)</h2>
-
-        <div class="code">
+            </div>
+        </details>
+        <details class="code-toggle">
+            <summary>Receiver hub (car)</summary>
+            <div class="code">
             <pre><code>from hub import port
 import motor
 import time
@@ -287,11 +289,11 @@ try:
 finally:
     motor.stop(port.B)
     motor.stop(port.F)</code></pre>
-        </div>
-
-        <h2>Laptop code (baby_player.py)</h2>
-
-        <div class="code">
+            </div>
+        </details>
+        <details class="code-toggle">
+            <summary>Laptop (baby_player.py)</summary>
+            <div class="code">
             <pre><code>from pathlib import Path
 import re
 import time
@@ -413,7 +415,8 @@ if __name__ == "__main__":
         print("\nStopped.")
     except (serial.SerialException, pygame.error) as error:
         print("\nError:", error)</code></pre>
-        </div>
+            </div>
+        </details>
 
 
         <h2>How the design changed</h2>

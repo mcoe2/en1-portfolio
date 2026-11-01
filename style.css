@@ -588,6 +588,12 @@ html[data-view="grid"] .shelf-arrows {
     height: 100%;
 }
 
+/* Tall photo cropped to a landscape shape; set object-position to pick the focus */
+.media.crop img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
 /* Vertical (phone-portrait) video */
 .media.video.portrait {
     aspect-ratio: 9 / 16;
@@ -671,6 +677,53 @@ html[data-view="grid"] .shelf-arrows {
     font-family: var(--mono);
     font-size: 0.88rem;
     line-height: 1.65;
+}
+
+/* Long code tucked behind a click-to-open bar */
+.code-toggle {
+    margin: 0 0 12px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.code-toggle summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+.code-toggle summary::-webkit-details-marker {
+    display: none;
+}
+
+.code-toggle summary::after {
+    content: "Show code +";
+    color: var(--muted);
+    font-size: 0.93rem;
+    font-weight: 500;
+}
+
+.code-toggle[open] summary::after {
+    content: "Hide code \2212";
+}
+
+.code-toggle summary:hover {
+    color: var(--blue);
+}
+
+.code-toggle .code pre {
+    margin: 0;
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.code-toggle:last-of-type {
+    margin-bottom: 40px;
 }
 
 .link-card {
