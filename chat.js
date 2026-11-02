@@ -86,6 +86,8 @@
           reply: 'For <a href="./activity06.html">Prepping for Haunted House</a>, Max got two SPIKE hubs talking: a sender hub with a distance sensor tells a receiver hub to spin its motor.' },
         { words: ['haunted', 'halloween', 'spooky', 'scary'],
           reply: 'For the EN1 <a href="./project10.html">Haunted House</a>, Max&rsquo;s group built a crying baby that gets louder as you walk up. One distance sensor controls the sound, a turning head, and a little robot car.' },
+        { words: ['high or low', 'classifier', 'nearest neighbor', 'knn', 'machine learning', 'training', 'bad data'],
+          reply: 'For <a href="./project11.html">High or Low</a>, Max built a LEGO device that learns high vs. low heights from examples. It uses k-nearest neighbors, so it still guessed right even when he trained it with a bad data point on purpose.' },
         { words: ['coaster', 'joker'],
           reply: 'For <a href="./activity01.html">Design a Coaster</a>, Max designed a drink coaster for an unusual client: the Joker.' },
         { words: ['airplane', 'plane', 'paper'],

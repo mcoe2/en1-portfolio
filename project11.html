@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>High or Low · Max Coe</title>
+    <meta name="description" content="Project 11: High or Low, from Max Coe's engineering portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/jumbo.svg" type="image/svg+xml">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a class="site-name" href="./index.html"><img src="./images/jumbo.svg" alt="" width="40" height="35"><span>Max Coe</span></a>
+            <nav class="site-nav">
+                <a href="./index.html#projects">Projects</a>
+                <a href="./index.html#activities">Activities</a>
+                <a href="./resume.html">Résumé</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap page">
+        <a class="back" href="./index.html">&larr; All projects</a>
+        <p class="page-meta">Project 11 &middot; November 2026</p>
+        <h1>High or Low</h1>
+
+        <figure class="media video">
+            <video controls playsinline preload="metadata" poster="./images/project11-video1.jpg" aria-label="Video of training the LEGO height classifier with high and low examples, then testing it as the motor arm moves to match">
+                <source src="./images/project11-video1.mp4" type="video/mp4">
+            </video>
+        </figure>
+
+        <div class="prose">
+            <p>For Project 11, I built a LEGO device that learns the difference between &ldquo;high&rdquo; and &ldquo;low&rdquo; heights. It&rsquo;s a supervised classifier, which basically means I teach it with examples first and then it makes its own guesses.</p>
+            <p>It has two modes. In <strong>training mode</strong>, I set the motor arm by hand to the high or low spot, put the device at that height, and press the button. It saves the distance sensor reading together with the motor&rsquo;s position. In <strong>prediction mode</strong>, it reads a new distance, finds the saved examples closest to it, and moves the motor arm to the position that goes with them.</p>
+            <p>The challenge was to use the single nearest neighbor (NN). For the extension, I switched it to k-nearest neighbors (kNN), where the 3 closest examples vote. The point of the extension was to see if it could handle bad data.</p>
+        </div>
+
+        <h2>Testing it with bad data</h2>
+
+        <div class="prose">
+            <p>In the video, I trained it on 7 points:</p>
+            <ul>
+                <li>3 high points that were actually high</li>
+                <li>1 low point that I labeled as high on purpose, as bad data</li>
+                <li>3 low points that were actually low</li>
+            </ul>
+            <p>Even with the bad point in there, the classifier still got high and low right. With plain nearest neighbor, one wrong point can flip the answer if it happens to be the closest one. With kNN, that bad point is only 1 of 3 votes, so the 2 good neighbors outvote it.</p>
+        </div>
+
+        <h2>Hardware setup</h2>
+
+        <div class="prose">
+            <ul>
+                <li><strong>Port A:</strong> distance sensor</li>
+                <li><strong>Port C:</strong> button (a SPIKE force sensor)</li>
+                <li><strong>Port E:</strong> motor used as the servo, with a yellow arm that points to high or low</li>
+            </ul>
+        </div>
+
+        <h2>How the code works</h2>
+
+        <div class="prose">
+            <p><strong>The button.</strong> A quick tap and a long hold do different things. Holding it for 1 second beeps so you know you can let go, and switches between training and prediction mode.</p>
+            <p><strong>Training mode.</strong> The motor goes loose so I can turn the arm by hand. Each tap takes the median of 5 distance readings, which gets rid of random spikes, and saves it with the motor&rsquo;s angle. The hub beeps and briefly shows how many points are saved.</p>
+            <p><strong>Prediction mode.</strong> The hub keeps reading the distance, sorts the saved points by how close their distance is, and takes the 3 closest. Points whose angles are within 20 degrees of each other count as the same spot. The spot with the most votes wins, and if there&rsquo;s a tie, the closer one wins. The motor only moves when the answer changes.</p>
+            <p><strong>The screen.</strong> The light matrix flashes back and forth so I can tell what&rsquo;s going on. In training it flashes <code>T</code> and then <code>H</code> or <code>L</code> for where the arm is set right now. In prediction it flashes <code>P</code> and then <code>H</code> or <code>L</code> for what it predicts. It shows <code>?</code> until it gets its first reading.</p>
+        </div>
+
+        <h2>Code</h2>
+
+        <details class="code-toggle">
+            <summary>Hub program</summary>
+            <div class="code">
+            <pre><code>from hub import port, light_matrix, sound
+import distance_sensor
+import force_sensor
+import motor
+import time
+
+SENSOR = port.A   # distance sensor
+BUTTON = port.C   # button (force sensor)
+SERVO = port.E    # motor used as the servo
+
+# Set these to your servo's high and low angles (read them from the console).
+HIGH_ANGLE = 90
+LOW_ANGLE = 0
+
+K = 3                 # neighbors that vote (keep it odd)
+SAME_SPOT_DEG = 20    # saved angles this close count as the same position
+LONG_PRESS_MS = 1000  # hold this long to switch modes
+FLASH_MS = 700        # how long each letter shows
+SPEED = 360
+
+# Training data: a list of (distance_mm, motor_angle) pairs.
+samples = []
+
+
+def read_distance():
+    # Median of 5 readings, or None if nothing is in range.
+    readings = []
+    for _ in range(5):
+        d = distance_sensor.distance(SENSOR)
+        if d &gt; 0:
+            readings.append(d)
+        time.sleep_ms(20)
+
+    if len(readings) &lt; 3:
+        return None
+
+    readings.sort()
+    return readings[len(readings) // 2]
+
+
+def check_button():
+    # Returns None, "short", or "long" once the button is let go.
+    if not force_sensor.pressed(BUTTON):
+        return None
+
+    start = time.ticks_ms()
+    long_press = False
+
+    while force_sensor.pressed(BUTTON):
+        if (
+            not long_press
+            and time.ticks_diff(time.ticks_ms(), start)
+            &gt;= LONG_PRESS_MS
+        ):
+            # Beep so you know you can let go.
+            sound.beep(1200, 100, 50)
+            long_press = True
+        time.sleep_ms(10)
+
+    return "long" if long_press else "short"
+
+
+def angle_diff(a, b):
+    # Smallest gap between two angles, in degrees.
+    d = (a - b) % 360
+    return min(d, 360 - d)
+
+
+def servo_label(angle):
+    # "H" or "L", whichever spot the angle is closer to.
+    if angle_diff(angle, HIGH_ANGLE) &lt; angle_diff(angle, LOW_ANGLE):
+        return "H"
+    return "L"
+
+
+def k_nearest_neighbor(distance):
+    # The K closest saved pairs vote on the angle.
+    neighbors = sorted(
+        samples,
+        key=lambda s: abs(s[0] - distance)
+    )[:K]
+
+    # Group neighbors whose angles are basically the same spot.
+    # Each group is [angle, votes, total distance gap].
+    groups = []
+    for d, angle in neighbors:
+        gap = abs(d - distance)
+        for g in groups:
+            if angle_diff(g[0], angle) &lt;= SAME_SPOT_DEG:
+                g[1] += 1
+                g[2] += gap
+                break
+        else:
+            groups.append([angle, 1, gap])
+
+    # Most votes wins. If it's a tie, the closer group wins.
+    best = max(groups, key=lambda g: (g[1], -g[2]))
+    return best[0]
+
+
+def mode_letter():
+    return "T" if mode == "train" else "P"
+
+
+def restart_flash():
+    global showing_mode, last_flash
+    showing_mode = True
+    last_flash = time.ticks_ms()
+    light_matrix.write(mode_letter())
+
+
+def flash(label):
+    # Flip between the mode letter and label every FLASH_MS.
+    # Returns True right when the label is put on the screen.
+    global showing_mode, last_flash
+    now = time.ticks_ms()
+    if time.ticks_diff(now, last_flash) &lt; FLASH_MS:
+        return False
+
+    showing_mode = not showing_mode
+    last_flash = now
+    if showing_mode:
+        light_matrix.write(mode_letter())
+        return False
+    light_matrix.write(label)
+    return True
+
+
+mode = "train"
+last_target = None
+showing_mode = True
+last_flash = 0
+
+# Let the servo move freely so you can set it by hand.
+motor.stop(SERVO, stop=motor.COAST)
+restart_flash()
+print("TRAINING: tap to save a pair, hold to predict")
+
+try:
+    while True:
+        press = check_button()
+
+        if mode == "train":
+            if press == "short":
+                d = read_distance()
+                if d is None:
+                    sound.beep(200, 300, 80)
+                    print("No distance reading, try again")
+                else:
+                    angle = motor.absolute_position(SERVO)
+                    samples.append((d, angle))
+                    sound.beep(880, 150, 80)
+                    print("Saved #", len(samples),
+                          "distance:", d, "angle:", angle,
+                          "(" + servo_label(angle) + ")")
+                    light_matrix.write(str(len(samples)))
+                    time.sleep_ms(600)
+                    restart_flash()
+
+            elif press == "long":
+                if len(samples) == 0:
+                    sound.beep(200, 300, 80)
+                    print("Save at least one pair first")
+                else:
+                    mode = "predict"
+                    last_target = None
+                    print("PREDICTING with", len(samples), "pairs:")
+                    for s in samples:
+                        print("  ", s)
+                    restart_flash()
+
+            else:
+                # Show where the servo is set right now.
+                angle = motor.absolute_position(SERVO)
+                if flash(servo_label(angle)):
+                    print("servo angle:", angle)
+
+        else:
+            if press == "long":
+                mode = "train"
+                motor.stop(SERVO, stop=motor.COAST)
+                print("TRAINING: tap to save a pair, hold to predict")
+                restart_flash()
+
+            else:
+                d = read_distance()
+                if d is not None:
+                    target = k_nearest_neighbor(d)
+
+                    # Only send a move when the answer changes.
+                    if target != last_target:
+                        motor.run_to_absolute_position(
+                            SERVO,
+                            target,
+                            SPEED,
+                            stop=motor.HOLD
+                        )
+                        last_target = target
+                        print("distance:", d, "-&gt; angle:", target,
+                              "(" + servo_label(target) + ")")
+
+                # Show the prediction, or "?" until there is one.
+                if last_target is None:
+                    flash("?")
+                else:
+                    flash(servo_label(last_target))
+
+        time.sleep_ms(20)
+
+finally:
+    motor.stop(SERVO)</code></pre>
+            </div>
+        </details>
+
+        <h2>How the design changed</h2>
+
+        <div class="prose">
+            <p>The first version did both parts of the assignment: a nearest neighbor mode for the challenge and a kNN mode for the extension, and tapping the button in prediction mode switched between them. After that, I added the flashing <code>T</code> and <code>H</code>/<code>L</code> in training mode, because when I was turning the arm by hand I couldn&rsquo;t tell if it was set to high or low. Then I took out nearest neighbor mode so prediction always uses kNN, and made prediction mode flash its guess the same way.</p>
+        </div>
+
+        <h2>Limitations</h2>
+
+        <div class="prose">
+            <ul>
+                <li>kNN only beats bad data when the good points outnumber it. If there were 2 bad points near the same height, they could outvote the 1 good one in a vote of 3.</li>
+                <li>The high and low angles (<code>HIGH_ANGLE</code> and <code>LOW_ANGLE</code>) have to be set in the code to match where I want the arm. They only control the letter on the screen, not where the motor goes.</li>
+                <li>The motor&rsquo;s angle reading jumps from 179 to &minus;180, so the high and low spots shouldn&rsquo;t be right near that point.</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="wrap">
+            <h2>Get in touch</h2>
+            <p>Engineering student at Tufts University.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/max-coe-9aa770360" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:mcoe02@tufts.edu">mcoe02@tufts.edu</a>
+                <a href="https://github.com/mcoe2" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./chat.js" defer></script>
+
+</body>
+</html>
