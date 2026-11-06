@@ -88,6 +88,8 @@
           reply: 'For the EN1 <a href="./project10.html">Haunted House</a>, Max&rsquo;s group built a crying baby that gets louder as you walk up. One distance sensor controls the sound, a turning head, and a little robot car.' },
         { words: ['high or low', 'classifier', 'nearest neighbor', 'knn', 'machine learning', 'training', 'bad data'],
           reply: 'For <a href="./project11.html">High or Low</a>, Max built a LEGO device that learns high vs. low heights from examples. It uses k-nearest neighbors, so it still guessed right even when he trained it with a bad data point on purpose.' },
+        { words: ['fruit', 'fruits', 'scanner', 'color sensor', 'colour sensor', 'apple', 'banana'],
+          reply: 'For <a href="./project12.html">Fruit Scanner</a>, Max built a robot that learns to tell 3 fruits apart with a color sensor. It spins, plays a happy sound, or plays a sad sound and shakes, depending on which fruit it sees.' },
         { words: ['coaster', 'joker'],
           reply: 'For <a href="./activity01.html">Design a Coaster</a>, Max designed a drink coaster for an unusual client: the Joker.' },
         { words: ['airplane', 'plane', 'paper'],
